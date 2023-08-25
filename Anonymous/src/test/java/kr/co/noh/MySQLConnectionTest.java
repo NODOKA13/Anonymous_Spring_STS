@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 
 import org.junit.Test;
 
+//73
 public class MySQLConnectionTest {
 	
 	private static final String DRIVER = "com.mysql.jdbc.Driver";

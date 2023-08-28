@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.noh.mappers.BoardMapper">
+	<!-- 게시판 글쓰기 -->
+	<insert id="BoardWrite">
+		insert into board (Title, Content, ViewCount, User_AI_Id, HitCount)
+		values (#{Title},#{Content},#{ViewCount},#{User_AI_Id}, #{HitCount})
+	</insert>
+	
+	<!-- 게시판 전체조회 -->
+	<select id="BoardListAll">
+		select * from board
+	</select>
+	<!-- 게시판 상제조회 -->
+	<select id="BoardDetail" resultType="BoardDTO">
+		select * from board where AI_ID=#{AI_ID}
+	</select>
+	
+	<!-- 게시판 수정 -->
+	<update id="BoardUpdate">
+		update board set Title=#{title}, Content=#{Content}, ViewCount=#{ViewCount}, User_AI_Id=#{User_AI_ID}, HitCount=#{HitCount}
+		where AI_ID=#{AI_ID}
+	</update>
+	
+	<!-- 게시판 삭제 -->
+	<delete id="BoardDelete">
+		delete from board where AI_ID=#{AI_ID}
+	</delete>
+	
+</mapper>

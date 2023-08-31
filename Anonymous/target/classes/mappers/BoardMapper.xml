@@ -11,11 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 게시판 전체조회 R -->
-	<select id="BoardListAll" resultType="BoardDTO">
+	<select id="BoardListAll" resultType="kr.co.noh.DTO.BoardDTO">
 		select * from board
 	</select>
 	<!-- 게시판 상제조회 R -->
-	<select id="BoardDetail" resultType="BoardDTO">
+	<select id="BoardDetail" resultType="kr.co.noh.DTO.BoardDTO">
 		select * from board where AI_ID=#{AI_ID}
 	</select>
 	

@@ -4,17 +4,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.co.noh.Article.ArticleMapper">
-	<!-- 댓글 쓰기 -->
+	<!-- 댓글 쓰기 C -->
 	<insert id="ArticleWrite">
 		insert into Article (Content, Board_AI_ID, User_AI_ID, HitCount)
 		values (#{Content},#{Board_AI_ID},#{User_AI_ID},#{HitCount})		
 	</insert>
-	<!-- 댓글 전체조회 -->
-	
-	<!-- 댓글 상제조회 -->
-	
-	<!-- 댓글 수정 -->
-	
-	<!-- 댓글 삭제 -->
+	<!-- 댓글 전체조회 R -->
+	<select id="ArticleListAll" resultType="kr.co.noh.DTO.ArticleDTO"> 
+		select * from article
+	</select>
+	<!-- 댓글 상제조회 R -->
+	<select id="ArticleDetail" resultType="kr.co.noh.DTO.ArticleDTO">
+		select * from article where AI_Id=#{AI_Id}	
+	</select>
+	<!-- 댓글 수정 U -->
+	<update id="ArticleUpdate">
+		update article set Content=#{Content}, HitCount=#{HitCount}
+		where AI_Id=#{AI_Id}  
+	</update>
+	<!-- 댓글 삭제 D -->
+	<delete id="ArticleDelete">
+		delete from article where AI_Id=#{AI_Id}
+	</delete>
 	
 </mapper>

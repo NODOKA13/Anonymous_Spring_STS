@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.co.noh.Article.ArticleMapper">
 	<!-- 댓글 쓰기 C -->
 	<insert id="ArticleWrite">
-		insert into Article (Content, Board_AI_ID, User_AI_ID, HitCount)
-		values (#{Content},#{Board_AI_ID},#{User_AI_ID},#{HitCount})		
+		insert into Article (content, boad_ai_id, user_ai_id, hitcount)
+		values (#{content},#{boad_ai_id},#{user_ai_id},#{hitcount})		
 	</insert>
 	<!-- 댓글 전체조회 R -->
 	<select id="ArticleListAll" resultType="kr.co.noh.DTO.ArticleDTO"> 
@@ -15,16 +15,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 댓글 상제조회 R -->
 	<select id="ArticleDetail" resultType="kr.co.noh.DTO.ArticleDTO">
-		select * from article where AI_Id=#{AI_Id}	
+		select * from article where ai_id=#{ai_id}	
 	</select>
 	<!-- 댓글 수정 U -->
 	<update id="ArticleUpdate">
-		update article set Content=#{Content}, HitCount=#{HitCount}
-		where AI_Id=#{AI_Id}  
+		update article set content=#{content}, hitcount=#{hitcount}
+		where ai_id=#{ai_id}  
 	</update>
 	<!-- 댓글 삭제 D -->
 	<delete id="ArticleDelete">
-		delete from article where AI_Id=#{AI_Id}
+		delete from article where ai_id=#{ai_id}
 	</delete>
 	
 </mapper>

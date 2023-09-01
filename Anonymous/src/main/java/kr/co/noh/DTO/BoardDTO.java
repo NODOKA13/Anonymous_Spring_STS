@@ -1,48 +1,48 @@
 package kr.co.noh.DTO;
 
 public class BoardDTO {
-	private String Title;
-	private String Content;
-	private int ViewCount;
-	private int User_AI_ID;
-	private int HitCount;
+	private String title;
+	private String content;
+	private int viewcount;
+	private int user_ai_id;
+	private int hitCount;
 	
 	
 	@Override
 	public String toString() {
-		return "BoardDTO [Title=" + Title + ", Content=" + Content + ", ViewCount=" + ViewCount + ", User_AI_ID="
-				+ User_AI_ID + ", HitCount=" + HitCount + "]";
+		return "BoardDTO [title=" + title + ", content=" + content + ", viewcount=" + viewcount + ", user_ai_id="
+				+ user_ai_id + ", hitCount=" + hitCount + "]";
 	}
 	
-	public String getTitle() {
-		return Title;
+	public String gettitle() {
+		return title;
 	}
-	public void setTitle(String title) {
-		Title = title;
+	public void settitle(String title) {
+		title = title;
 	}
-	public String getContent() {
-		return Content;
+	public String getcontent() {
+		return content;
 	}
-	public void setContent(String content) {
-		Content = content;
+	public void setcontent(String content) {
+		content = content;
 	}
-	public int getViewCount() {
-		return ViewCount;
+	public int getviewcount() {
+		return viewcount;
 	}
-	public void setViewCount(int viewCount) {
-		ViewCount = viewCount;
+	public void setviewcount(int viewcount) {
+		viewcount = viewcount;
 	}
-	public int getUser_AI_ID() {
-		return User_AI_ID;
+	public int getuser_ai_id() {
+		return user_ai_id;
 	}
-	public void setUser_AI_ID(int user_AI_ID) {
-		User_AI_ID = user_AI_ID;
+	public void setuser_ai_id(int user_ai_id) {
+		user_ai_id = user_ai_id;
 	}
-	public int getHitCount() {
-		return HitCount;
+	public int gethitCount() {
+		return hitCount;
 	}
-	public void setHitCount(int hitCount) {
-		HitCount = hitCount;
+	public void sethitCount(int hitCount) {
+		hitCount = hitCount;
 	}
 	
 	

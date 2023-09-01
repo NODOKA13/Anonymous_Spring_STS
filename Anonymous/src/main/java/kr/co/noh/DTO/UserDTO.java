@@ -1,25 +1,25 @@
 package kr.co.noh.DTO;
 
 public class UserDTO {
-	private String ID;
-	private String Password;
+	private String id;
+	private String password;
 	
 	@Override
 	public String toString() {
-		return "UserDTO [ID=" + ID + ", Password=" + Password + "]";
+		return "UserDTO [id=" + id + ", password=" + password + "]";
 	}
 	
-	public String getID() {
-		return ID;
+	public String getid() {
+		return id;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setid(String id) {
+		id = id;
 	}
-	public String getPassword() {
-		return Password;
+	public String getpassword() {
+		return password;
 	}
-	public void setPassword(String password) {
-		Password = password;
+	public void setpassword(String password) {
+		password = password;
 	}
 	
 	

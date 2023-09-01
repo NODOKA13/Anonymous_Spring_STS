@@ -1,48 +1,48 @@
 package kr.co.noh.DTO;
 
 public class ArticleDTO {
-	private int AI_Id;
-	private String Content;
-	private int Board_AI_ID;
-	private int User_AI_ID;
-	private int HitCount;
+	private int ai_id;
+	private String content;
+	private int board_ai_id;
+	private int user_ai_id;
+	private int hitCount;
 	
 	
 	@Override
 	public String toString() {
-		return "ArticleDTO [AI_Id=" + AI_Id + ", Content=" + Content + ", Board_AI_ID=" + Board_AI_ID + ", User_AI_ID="
-				+ User_AI_ID + ", HitCount=" + HitCount + "]";
+		return "ArticleDTO [ai_id=" + ai_id + ", content=" + content + ", board_ai_id=" + board_ai_id + ", user_ai_id="
+				+ user_ai_id + ", hitCount=" + hitCount + "]";
 	}
 	
-	public int getAI_Id() {
-		return AI_Id;
+	public int getai_id() {
+		return ai_id;
 	}
-	public void setAI_Id(int aI_Id) {
-		AI_Id = aI_Id;
+	public void setai_id(int ai_id) {
+		ai_id = ai_id;
 	}
-	public String getContent() {
-		return Content;
+	public String getcontent() {
+		return content;
 	}
-	public void setContent(String content) {
-		Content = content;
+	public void setcontent(String content) {
+		content = content;
 	}
-	public int getBoard_AI_ID() {
-		return Board_AI_ID;
+	public int getboard_ai_id() {
+		return board_ai_id;
 	}
-	public void setBoard_AI_ID(int board_AI_ID) {
-		Board_AI_ID = board_AI_ID;
+	public void setboard_ai_id(int board_ai_id) {
+		board_ai_id = board_ai_id;
 	}
-	public int getUser_AI_ID() {
-		return User_AI_ID;
+	public int getuser_ai_id() {
+		return user_ai_id;
 	}
-	public void setUser_AI_ID(int user_AI_ID) {
-		User_AI_ID = user_AI_ID;
+	public void setuser_ai_id(int user_ai_id) {
+		user_ai_id = user_ai_id;
 	}
-	public int getHitCount() {
-		return HitCount;
+	public int gethitCount() {
+		return hitCount;
 	}
-	public void setHitCount(int hitCount) {
-		HitCount = hitCount;
+	public void sethitCount(int hitCount) {
+		hitCount = hitCount;
 	}
 	
 	

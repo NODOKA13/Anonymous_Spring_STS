@@ -3,28 +3,28 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.co.noh.mappers.UserMapper">
+<mapper namespace="kr.co.noh.UserMapper">
 	<!-- 사용자 추가 C -->
-	<insert id="UserAdd">
-		insert into user (ID, Password)
-		values (#{ID},#{Password})
+	<insert id="UserAdd" >
+		insert into user (id, password)
+		values (#{id},#{password})
 	</insert>
 	
 	<!-- 사용자 상제조회 R -->
 	<select id="UserDetail" resultType="kr.co.noh.DTO.UserDTO">
 		select * from user
-		where AI_ID=#{AI_ID}
+		where =#{ai_id}
 	</select>
 	
 	<!-- 사용자 수정 U -->
 	<update id="UserUpdate">
-		update user set ID=#{ID}, Password=#{Password}
-		where AI_Id=#{AI_Id}
+		update user set id=#{id}, password=#{password}
+		where ai_id=#{ai_id}
 	</update>
 	
 	<!-- 사용자 삭제 D -->
 	<delete id="UserDelete">
-		delete from user where AI_Id=#{AI_ID}
+		delete from user where ai_id=#{ai_id}
 	</delete>
 	
 </mapper>

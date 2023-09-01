@@ -6,17 +6,17 @@ import kr.co.noh.DTO.ArticleDTO;
 
 public interface ArticleDAO {
 	//´ñ±Û ¾²±â C
-	public void ArticleWrite(ArticleDTO ArticleDTO);
+	public void ArticleWrite(ArticleDTO articleDTO);
 	
 	//´ñ±Û ÀüÁ¦Á¶È¸ R
-	public List<ArticleDTO> ArticleListAll(int AI_Id);
+	public List<ArticleDTO> ArticleListAll(int ai_id);
 	
 	//´ñ±Û »óÁ¦Á¶È¸ R
-	public ArticleDTO ArticleDetail(int AI_Id);
+	public ArticleDTO ArticleDetail(int ai_id);
 	
 	//´ñ±Û ¼öÁ¤ U
-	public void ArticleUpdate(int AI_Id);
+	public void ArticleUpdate(int ai_id);
 	
 	//´ñ±Û »èÁ¦ D
-	public void ArticleDelete(int AI_Id);
+	public void ArticleDelete(int ai_id);
 }

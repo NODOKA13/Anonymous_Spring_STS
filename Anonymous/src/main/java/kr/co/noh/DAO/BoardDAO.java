@@ -6,17 +6,17 @@ import kr.co.noh.DTO.BoardDTO;
 
 public interface BoardDAO {
 	//글쓰기 C
-	public void BoardWrite(BoardDTO BoardDTO);
+	public void BoardWrite(BoardDTO boardDTO);
 	
 	//글 전체조회 R
-	public List<BoardDTO> BoardListAll();
+	public List<BoardDTO> boardListAll();
 	
 	//글 상세조회 R
-	public BoardDTO BoardDetail(int AI_ID);
+	public BoardDTO BoardDetail(int ai_id);
 	
 	//글 수정 U
-	public void BoardUpdate(int AI_ID);
+	public void BoardUpdate(int ai_id);
 	
 	//글 삭제 D
-	public void BoardDelete(int AI_ID);
+	public void BoardDelete(int ai_id);
 }

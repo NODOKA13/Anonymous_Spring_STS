@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.co.noh.mappers.BoardMapper">
 	<!-- 게시판 글쓰기 C -->
 	<insert id="BoardWrite">
-		insert into board (Title, Content, ViewCount, User_AI_Id, HitCount)
-		values (#{Title},#{Content},#{ViewCount},#{User_AI_Id}, #{HitCount})
+		insert into board (title, content, viewcount, user_ai_id, hitcount)
+		values (#{title},#{content},#{viewcount},#{user_ai_id}, #{hitcount})
 	</insert>
 	
 	<!-- 게시판 전체조회 R -->
@@ -16,18 +16,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 게시판 상제조회 R -->
 	<select id="BoardDetail" resultType="kr.co.noh.DTO.BoardDTO">
-		select * from board where AI_ID=#{AI_ID}
+		select * from board where ai_id=#{ai_id}
 	</select>
 	
 	<!-- 게시판 수정 U -->
 	<update id="BoardUpdate">
-		update board set Title=#{title}, Content=#{Content}, ViewCount=#{ViewCount}, HitCount=#{HitCount}
-		where AI_ID=#{AI_ID}
+		update board set title=#{title}, content=#{content}, viewcount=#{viewcount}, hitcount=#{hitcount}
+		where ai_id=#{ai_id}
 	</update>
 	
 	<!-- 게시판 삭제 D -->
 	<delete id="BoardDelete">
-		delete from board where AI_ID=#{AI_ID}
+		delete from board where ai_id=#{ai_id}
 	</delete>
 	
 </mapper>

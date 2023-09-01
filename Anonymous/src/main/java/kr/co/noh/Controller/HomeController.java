@@ -1,4 +1,4 @@
-package kr.co.noh;
+package kr.co.noh.Controller;
 
 import java.text.DateFormat;
 import java.util.Date;

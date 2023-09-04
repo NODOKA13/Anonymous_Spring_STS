@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.co.noh.UserMapper">
+<mapper namespace="kr.co.noh.mappers.UserMapper">
 	<!-- 사용자 추가 C -->
 	<insert id="UserAdd" >
 		insert into user (id, password)
@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 사용자 상제조회 R -->
 	<select id="UserDetail" resultType="kr.co.noh.DTO.UserDTO">
 		select * from user
-		where =#{ai_id}
+		where ai_id=#{ai_id}
 	</select>
 	
 	<!-- 사용자 수정 U -->

@@ -19,9 +19,9 @@ public class UserDAOTest {
 	private UserDAO userdao;
 	
 	@Test
-	public void testUserDelete() {
-		System.out.println("딜리트");
-		userdao.UserDelete(1);
-		System.out.println("성공");
+	public void testUserDetail() {
+		System.out.println("--스타트--");
+		System.out.println(userdao.UserDetail(1));
+		System.out.println("디테일성공");
 	}
 }

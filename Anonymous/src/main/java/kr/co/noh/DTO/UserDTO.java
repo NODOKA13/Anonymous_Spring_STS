@@ -1,9 +1,9 @@
 package kr.co.noh.DTO;
 
 public class UserDTO {
-	private String id;
-	private String password;
-	private String ai_id;
+	private String id; //유저의 아이디
+	private String password; //유저의 비밀번호
+	private String ai_id; //유저의 고유번호
 	
 	@Override
 	public String toString() {

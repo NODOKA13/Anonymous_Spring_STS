@@ -170,10 +170,13 @@
 <script src="${contextPath}/resources/bootstrap/js/bootstrap.min.js"
 	type="text/javascript"></script>
 <!-- FastClick -->
-<script src='${contextPath}/resources/plugins/fastclick/fastclick.min.js'></script>
+<script
+	src='${contextPath}/resources/plugins/fastclick/fastclick.min.js'></script>
 <!-- AdminLTE App -->
-<script src="${contextPath}/resources/dist/js/app.min.js" type="text/javascript"></script>
+<script src="${contextPath}/resources/dist/js/app.min.js"
+	type="text/javascript"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="${contextPath}/resources/dist/js/demo.js" type="text/javascript"></script>
+<script src="${contextPath}/resources/dist/js/demo.js"
+	type="text/javascript"></script>
 </body>
 </html>

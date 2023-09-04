@@ -1,11 +1,11 @@
 package kr.co.noh.DTO;
 
 public class ArticleDTO {
-	private int ai_id;
-	private String content;
-	private int board_ai_id;
-	private int user_ai_id;
-	private int hitCount;
+	private int ai_id; //댓글의 고유번호
+	private String content; //댓글의 내용
+	private int board_ai_id; //보드의 고유번호(댓글을 적을 게시글의 고유번호)
+	private int user_ai_id; //유저의 고유번호(작성자)
+	private int hitCount; //댓글의 추천수
 	
 	
 	@Override

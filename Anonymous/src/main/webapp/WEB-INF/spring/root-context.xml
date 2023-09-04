@@ -31,6 +31,6 @@
 	</bean>
 	
 	<!-- @Repository를 위한 빈 등록 -->
-	<context:component-scan base-package="kr.co.noh.mappers" />
 	<context:component-scan base-package="kr.co.noh" />
+	<context:component-scan base-package="kr.co.noh.service" />
 </beans>

@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set> 
+<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+
+<!-- p168 -->
 
 <html>
 <head>
 <title>Home</title>
 </head>
 <body>
+	<!-- header -->
 	<%@include file="include/header.jsp"%>
 
 	<!-- Main content -->
@@ -15,11 +18,12 @@
 		<div class="row">
 			<!-- left column -->
 			<div class="col-md-12">
-				<!general form elements -->
+				<!-- general form elements -->
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class=,,box-title">HOME PAGE</h3>
+						<h3 class="box-title">HOME PAGE</h3>
 					</div>
+					<a href = "board/boardwrite">글쓰기(board/boardwrite)</a>
 				</div>
 			</div>
 			<!--/.col (left) -->
@@ -28,6 +32,7 @@
 	</section>
 	<!-- /.content -->
 
+	<!-- footer -->
 	<%@include file="include/footer.jsp"%>
 
 </body>

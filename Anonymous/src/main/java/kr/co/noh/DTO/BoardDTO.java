@@ -1,11 +1,11 @@
 package kr.co.noh.DTO;
 
 public class BoardDTO {
-	private String title;
-	private String content;
-	private int viewcount;
-	private int user_ai_id;
-	private int hitCount;
+	private String title; //게시글의 제목
+	private String content; //게시글의 내용
+	private int viewcount; //게시글의 조회수
+	private int user_ai_id; //유저의 고유번호(작성자)
+	private int hitCount; //게시글의 추천수
 	
 	
 	@Override

@@ -13,7 +13,7 @@ import kr.co.noh.DTO.BoardDTO;
 public class BoardDAOImpl implements BoardDAO{
 	@Autowired
 	private SqlSession sqlsession;
-	private final static String namespace = "kr.co.noh.BoardMapper";
+	private final static String namespace = "kr.co.noh.mappers.BoardMapper";
 
 	//게시글 쓰기 C
 	@Override

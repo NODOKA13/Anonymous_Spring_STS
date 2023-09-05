@@ -7,43 +7,44 @@ public class BoardDTO {
 	private int user_ai_id; //유저의 고유번호(작성자)
 	private int hitCount; //게시글의 추천수
 	
-	
 	@Override
 	public String toString() {
 		return "BoardDTO [title=" + title + ", content=" + content + ", viewcount=" + viewcount + ", user_ai_id="
 				+ user_ai_id + ", hitCount=" + hitCount + "]";
 	}
 	
-	public String gettitle() {
+	public String getTitle() {
 		return title;
 	}
-	public void settitle(String title) {
-		title = title;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getcontent() {
+	public String getContent() {
 		return content;
 	}
-	public void setcontent(String content) {
-		content = content;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public int getviewcount() {
+	public int getViewcount() {
 		return viewcount;
 	}
-	public void setviewcount(int viewcount) {
-		viewcount = viewcount;
+	public void setViewcount(int viewcount) {
+		this.viewcount = viewcount;
 	}
-	public int getuser_ai_id() {
+	public int getUser_ai_id() {
 		return user_ai_id;
 	}
-	public void setuser_ai_id(int user_ai_id) {
-		user_ai_id = user_ai_id;
+	public void setUser_ai_id(int user_ai_id) {
+		this.user_ai_id = user_ai_id;
 	}
-	public int gethitCount() {
+	public int getHitCount() {
 		return hitCount;
 	}
-	public void sethitCount(int hitCount) {
-		hitCount = hitCount;
+	public void setHitCount(int hitCount) {
+		this.hitCount = hitCount;
 	}
+	
+	
 	
 	
 }

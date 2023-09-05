@@ -14,23 +14,23 @@
 	<!-- Main content -->
 	<form role="form" method="post">
 		<div class="box-body">
-			<div class="form-group" >
-				<label for="exampleInputEmaill">Title</label> <input type="text"
-					name='title' class="form-control" placeholder="Enter Title">
+			<div class="form-group">
+				<label>제목</label> <input type="text" name='title'
+					class="form-control" placeholder="제목을 입력해 주세요">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Content</label>
+				<label>내용</label>
 				<textarea class="form-control" name="content" rows="3"
-					placeholder="Enter ..."></textarea>
+					placeholder="내용을 입력해 주세요"></textarea>
 			</div>
 			<div class="form-group">
-				<label for="exampleInputEmail1">Writer</label> <input type="text"
-					name="user_ai_id" class="form-control" placeholder="Enter Writer">
+				<label>작정자</label> <input type="text" name="user_ai_id"
+					class="form-control" placeholder="작정자 이름 작성">
 			</div>
 		</div>
 		<!-- /.box-body -->
 		<div class="box-footer">
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary">작성</button>
 		</div>
 	</form>
 

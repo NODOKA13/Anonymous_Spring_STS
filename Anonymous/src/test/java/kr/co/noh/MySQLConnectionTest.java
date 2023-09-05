@@ -10,11 +10,8 @@ import org.junit.Test;
 public class MySQLConnectionTest {
 	
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-	
 	private static final String URL = "jdbc:mysql://localhost:3306/anonymous?useSSL=false";
-	
 	private static final String USER = "root";
-	
 	private static final String PW = "12345";
 	
 	@Test

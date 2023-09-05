@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.co.noh.mappers.BoardMapper">
 	<!-- 게시판 글쓰기 C -->
-	<insert id="BoardWrite">
+	<insert id="BoardWrite" parameterType="kr.co.noh.DTO.BoardDTO">
 		insert into board (title, content, viewcount, user_ai_id, hitcount)
 		values (#{title},#{content},#{viewcount},#{user_ai_id}, #{hitcount})
 	</insert>

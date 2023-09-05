@@ -23,7 +23,7 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">HOME PAGE</h3>
 					</div>
-					<a href = "board/boardwrite">글쓰기(board/boardwrite)</a>
+					<a href = "board/write">글쓰기(board/boardwrite)</a>
 				</div>
 			</div>
 			<!--/.col (left) -->

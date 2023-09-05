@@ -21,17 +21,17 @@ public class BoardController {
 	private BoardService boardservice;
 	
 	//게시글 등록하는 페이지로 이동
-	@RequestMapping(value = "/boardwrite", method = RequestMethod.GET)
-	public void BoardWriteGET(BoardDTO boarddto, Model model) {
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public void BoardWriteGET() {
 
-		logger.info("regist get ............");
+		logger.info("board/write get ............");
 	}
 	
 	//게시글 등록
-	@RequestMapping(value = "/boardwrite", method = RequestMethod.POST)
-	public String BoardWritePOSt(BoardDTO dto, Model model) {
+	@RequestMapping(value = "/write", method = RequestMethod.POST)
+	public String BoardWritePOST(BoardDTO dto, Model model) {
 
-		logger.info("regist post ............");
+		logger.info("board/write post ............");
 		logger.info(dto.toString());
 		
 		boardservice.BoardWrite(dto);

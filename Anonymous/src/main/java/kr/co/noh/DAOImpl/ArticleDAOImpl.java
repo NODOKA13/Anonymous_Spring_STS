@@ -13,7 +13,7 @@ import kr.co.noh.DTO.ArticleDTO;
 public class ArticleDAOImpl implements ArticleDAO{
 	@Autowired
 	private SqlSession sqlsession;
-	private final static String namespace = "kr.co.noh.ArticleMapper";
+	private final static String namespace = "kr.co.noh.mappers.ArticleMapper";
 	
 	//¥Ò±€ ¿€º∫ C
 	@Override

@@ -19,7 +19,7 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void BoardWrite(BoardDTO boarddto) {
 		// TODO Auto-generated method stub
-		sqlsession.insert(namespace+".BoardWrite");
+		sqlsession.insert(namespace+".BoardWrite",boarddto);
 	}
 	
 	//게시글 전체조회 R
@@ -34,7 +34,7 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public BoardDTO BoardDetail(int ai_id) {
 		// TODO Auto-generated method stub
-		BoardDTO BoardDetail = sqlsession.selectOne(namespace+".BoardDetail");
+		BoardDTO BoardDetail = sqlsession.selectOne(namespace+".BoardDetail", ai_id);
 		return BoardDetail;
 	}
 	
@@ -42,14 +42,14 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void BoardUpdate(int ai_id) {
 		// TODO Auto-generated method stub
-		sqlsession.update(namespace+".BoardUpdate");
+		sqlsession.update(namespace+".BoardUpdate", ai_id);
 	}
 	
 	//게시글 삭제 D
 	@Override
 	public void BoardDelete(int ai_id) {
 		// TODO Auto-generated method stub
-		sqlsession.delete(namespace+".BoardDelete");
+		sqlsession.delete(namespace+".BoardDelete", ai_id);
 	}
 	
 }

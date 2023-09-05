@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="kr.co.noh.mappers.UserMapper">
 	<!-- 사용자 추가 C -->
-	<insert id="UserAdd" >
+	<insert id="UserAdd">
 		insert into user (id, password)
 		values (#{id},#{password})
 	</insert>

@@ -38,6 +38,6 @@ public class BoardController {
 
 		model.addAttribute("result", "success");
 
-		return "/board/boardsuccess";
+		return "/board/success";
 	}
 }

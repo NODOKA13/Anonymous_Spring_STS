@@ -5,13 +5,14 @@ public class BoardDTO {
 	private String content; //게시글의 내용
 	private int viewcount; //게시글의 조회수
 	private int user_ai_id; //유저의 고유번호(작성자)
-	private int hitCount; //게시글의 추천수
+	private int hitcount; //게시글의 추천수
 	
 	@Override
 	public String toString() {
 		return "BoardDTO [title=" + title + ", content=" + content + ", viewcount=" + viewcount + ", user_ai_id="
-				+ user_ai_id + ", hitCount=" + hitCount + "]";
+				+ user_ai_id + ", hitcount=" + hitcount + "]";
 	}
+	
 	
 	public String getTitle() {
 		return title;
@@ -37,12 +38,13 @@ public class BoardDTO {
 	public void setUser_ai_id(int user_ai_id) {
 		this.user_ai_id = user_ai_id;
 	}
-	public int getHitCount() {
-		return hitCount;
+	public int getHitcount() {
+		return hitcount;
 	}
-	public void setHitCount(int hitCount) {
-		this.hitCount = hitCount;
+	public void setHitcount(int hitcount) {
+		this.hitcount = hitcount;
 	}
+	
 	
 	
 	

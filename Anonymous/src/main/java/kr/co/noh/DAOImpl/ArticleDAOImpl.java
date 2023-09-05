@@ -19,14 +19,14 @@ public class ArticleDAOImpl implements ArticleDAO{
 	@Override
 	public void ArticleWrite(ArticleDTO articleDTO) {
 		// TODO Auto-generated method stub
-		sqlsession.insert(namespace+".ArticleWrite");
+		sqlsession.insert(namespace+".ArticleWrite",articleDTO);
 	}
 
 	//¥Ò±€ ¿¸¡¶¡∂»∏ R
 	@Override
 	public List<ArticleDTO> ArticleListAll(int ai_id) {
 		// TODO Auto-generated method stub
-		List<ArticleDTO> articleListAll = sqlsession.selectList(namespace+".ArticleListAll");
+		List<ArticleDTO> articleListAll = sqlsession.selectList(namespace+".ArticleListAll",ai_id);
 		return null;
 	}
 
@@ -34,7 +34,7 @@ public class ArticleDAOImpl implements ArticleDAO{
 	@Override
 	public ArticleDTO ArticleDetail(int ai_id) {
 		// TODO Auto-generated method stub
-		ArticleDTO ArticleDetail = sqlsession.selectOne(namespace+".ArticleDetail");
+		ArticleDTO ArticleDetail = sqlsession.selectOne(namespace+".ArticleDetail",ai_id);
 		return ArticleDetail;
 	}
 	
@@ -42,14 +42,14 @@ public class ArticleDAOImpl implements ArticleDAO{
 	@Override
 	public void ArticleUpdate(int ai_id) {
 		// TODO Auto-generated method stub
-		sqlsession.update(namespace+".ArticleUpdate");
+		sqlsession.update(namespace+".ArticleUpdate",ai_id);
 	}
 
 	//¥Ò±€ ªË¡¶ D
 	@Override
 	public void ArticleDelete(int ai_id) {
 		// TODO Auto-generated method stub
-		sqlsession.delete(namespace+".ArticleDelete");
+		sqlsession.delete(namespace+".ArticleDelete",ai_id);
 	}
 
 }

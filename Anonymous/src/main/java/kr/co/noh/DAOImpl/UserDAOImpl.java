@@ -34,7 +34,7 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public void UserUpdate(int ai_id) {
 		// TODO Auto-generated method stub
-		sqlsession.update(namespace+".UserUpdate");
+		sqlsession.update(namespace+".UserUpdate", ai_id);
 	}
 	
 	//유저 삭제 D

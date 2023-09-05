@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Home</title>
+<title>write</title>
 </head>
 <body>
 	<!-- header -->

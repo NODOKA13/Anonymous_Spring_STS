@@ -7,27 +7,33 @@
 
 <html>
 <head>
-<title>success</title>
+<title>listAll</title>
 </head>
 <body>
+	<script>
+		var result = '${msg}';
+
+		if (result == 'success') {
+			alert("저리가 왼료되었습니다.");
+		}
+	</script>
+
+
 	<!-- header -->
 	<%@include file="../include/header.jsp"%>
 
 	<!-- Main content -->
-	<!-- left column -->
-	<div class="col-md-12">
-		<!-- general form elements -->
-		<div class="box">
-			<div class="box-header with-border">
-				<h3 class="box-title">SUCCESS PAGE</h3>
-			</div>
-			<div class="box-body">SUCCESS!!!</div>
-			<!-- /.box-body -->
-			<div class="box-footer">Footer</div>
-			<!--/.box-footer-->
-		</div>
-	</div>
-	<!--/.col (left) -->
+	<table class="table table-bordered">
+		<tr>
+			<th style="width: 10px">글번호</th>
+			<th>제목</th>
+			<th>작정자</th>
+			<th>작성일</th>
+			<th style="width: 40px">조회수</th>
+		</tr>
+	</table>
+	<!-- /.content -->
+
 	<!-- footer -->
 	<%@include file="../include/footer.jsp"%>
 

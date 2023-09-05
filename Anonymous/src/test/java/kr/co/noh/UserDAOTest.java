@@ -8,7 +8,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.co.noh.DAO.UserDAO;
-import kr.co.noh.DTO.UserDTO;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)

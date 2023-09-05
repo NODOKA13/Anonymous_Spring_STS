@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.service.BoardService;
 
@@ -27,17 +29,25 @@ public class BoardController {
 		logger.info("board/write get ............");
 	}
 	
-	//게시글 등록
+	//게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
-	public String BoardWritePOST(BoardDTO dto, Model model) {
+	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) {
 
 		logger.info("board/write post ............");
 		logger.info(dto.toString());
 		
 		boardservice.BoardWrite(dto);
 
-		model.addAttribute("result", "success");
+		rttr.addFlashAttribute("msg", "success");
 
-		return "/board/success";
+		//return "/board/success";
+		return "redirect:/board/listAll";
+	}
+	
+	//게시글 전체 조회
+	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+	public void listAll(Model model) {
+		
+		logger.info("show all list ...................");
 	}
 }

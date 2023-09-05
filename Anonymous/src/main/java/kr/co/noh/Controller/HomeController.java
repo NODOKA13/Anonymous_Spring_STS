@@ -36,4 +36,11 @@ public class HomeController {
 		return "test";
 	}
 	
+	//더미페이지
+	@RequestMapping(value = "dummy", method = RequestMethod.GET)
+	public String dummy() {
+		
+		return "dummy";
+	}
+	
 }

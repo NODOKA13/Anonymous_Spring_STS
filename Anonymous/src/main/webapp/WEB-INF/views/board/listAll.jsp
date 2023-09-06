@@ -34,8 +34,8 @@
 		
 		<c:forEach items="${list}" var="BoardDTO">
 			<tr>
-				<td><a href='/board/detail?ai_id=${BoardDTO.ai_id }'>${BoardDTO.ai_id }</td>
-				<td>${BoardDTO.title}</a></td>
+				<td>${BoardDTO.ai_id }</td>
+				<td><a href=''>${BoardDTO.title}</a></td>
 				<td>${BoardDTO.user_ai_id }</td>
 				<td>${BoardDTO.date }</td>
 				<td>${BoardDTO.viewcount }</td>

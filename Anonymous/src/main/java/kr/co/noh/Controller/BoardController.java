@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.noh.DTO.BoardDTO;
@@ -23,14 +22,14 @@ public class BoardController {
 	@Inject
 	private BoardService boardservice;
 	
-	//C °Ô½Ã±Û µî·ÏÇÏ´Â ÆäÀÌÁö·Î ÀÌµ¿
+	//°Ô½Ã±Û µî·ÏÇÏ´Â ÆäÀÌÁö·Î ÀÌµ¿
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void BoardWriteGET() {
 
 		logger.info("board/write get ............");
 	}
 	
-	// °Ô½Ã±Û µî·Ï, p210 RedirectAttributes·Î µ¥ÀÌÅÍ Àü¼Û ¼û±â±â
+	//°Ô½Ã±Û µî·Ï, p210 RedirectAttributes·Î µ¥ÀÌÅÍ Àü¼Û ¼û±â±â
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) {
 
@@ -45,13 +44,14 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	//R °Ô½Ã±Û ÀüÃ¼ Á¶È¸
+	//°Ô½Ã±Û ÀüÃ¼ Á¶È¸
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public void listAll(Model model) {
 		
 		logger.info("show all list ...................");
 		model.addAttribute("list",boardservice.boardListAll());
 	}
+<<<<<<< HEAD
 	
 	//R °Ô½Ã±Û »ó¼¼ Á¶È¸
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
@@ -71,4 +71,6 @@ public class BoardController {
 		
 		return "redirect:/board/listAll";
 	}
+=======
+>>>>>>> parent of 43906c4 (ë³´ë“œì»¨íŠ¸ë¡¤ëŸ¬ ìˆ˜ì •, ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸° ì¶”ê°€)
 }

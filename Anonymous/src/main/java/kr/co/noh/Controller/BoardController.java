@@ -39,7 +39,7 @@ public class BoardController {
 		
 		boardservice.BoardWrite(dto);
 
-		rttr.addFlashAttribute("msg", "success");
+		rttr.addFlashAttribute("result", "success");
 
 		//return "/board/success";
 		return "redirect:/board/listAll";
@@ -59,5 +59,16 @@ public class BoardController {
 		
 		//그냥 넣으면 boardDTO로 앞자리가 소문자로 넣어짐!!
 		model.addAttribute(boardservice.BoardDetail(ai_id));
+	}
+	
+	//D 게시글 삭제
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(@RequestParam("ai_id") int ai_id, RedirectAttributes rttr) {
+		
+		boardservice.BoardDelete(ai_id);
+		
+		rttr.addFlashAttribute("result","success");
+		
+		return "redirect:/board/listAll";
 	}
 }

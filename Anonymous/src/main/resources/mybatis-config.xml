@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- mybatis-config 설정 p91 -->
+<!-- typeAliases 설정 p183 -->
 <!DOCTYPE configuration
 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases>
+	  <package name="kr.co.noh"/>
+	</typeAliases>
 </configuration>

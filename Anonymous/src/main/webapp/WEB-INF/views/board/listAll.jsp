@@ -31,6 +31,17 @@
 			<th>작성일</th>
 			<th style="width: 40px">조회수</th>
 		</tr>
+		
+		<c:forEach items="${list}" var="BoardDTO">
+			<tr>
+				<td>${BoardDTO.ai_id }</td>
+				<td><a href=''>${BoardDTO.title}</a></td>
+				<td>${BoardDTO.user_ai_id }</td>
+				<td>${BoardDTO.date }</td>
+				<td>${BoardDTO.viewcount }</td>
+			</tr>
+
+		</c:forEach>
 	</table>
 	<!-- /.content -->
 

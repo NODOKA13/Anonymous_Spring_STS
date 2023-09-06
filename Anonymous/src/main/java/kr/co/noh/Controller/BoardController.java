@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.noh.DTO.BoardDTO;
@@ -22,14 +23,14 @@ public class BoardController {
 	@Inject
 	private BoardService boardservice;
 	
-	//°Ô½Ã±Û µî·ÏÇÏ´Â ÆäÀÌÁö·Î ÀÌµ¿
+	//ê²Œì‹œê¸€ ë“±ë¡í•˜ëŠ” í˜ì´ì§€ë¡œ ì´ë™
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void BoardWriteGET() {
 
 		logger.info("board/write get ............");
 	}
 	
-	//°Ô½Ã±Û µî·Ï, p210 RedirectAttributes·Î µ¥ÀÌÅÍ Àü¼Û ¼û±â±â
+	//ê²Œì‹œê¸€ ë“±ë¡, p210 RedirectAttributesë¡œ ë°ì´í„° ì „ì†¡ ìˆ¨ê¸°ê¸°
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) {
 
@@ -44,24 +45,23 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	//°Ô½Ã±Û ÀüÃ¼ Á¶È¸
+	//ê²Œì‹œê¸€ ì „ì²´ ì¡°íšŒ
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public void listAll(Model model) {
 		
 		logger.info("show all list ...................");
 		model.addAttribute("list",boardservice.boardListAll());
 	}
-<<<<<<< HEAD
 	
-	//R °Ô½Ã±Û »ó¼¼ Á¶È¸
+	//R ê²Œì‹œê¸€ ìƒì„¸ ì¡°íšŒ
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(@RequestParam("ai_id") int ai_id, Model model) {
 		
-		//±×³É ³ÖÀ¸¸é boardDTO·Î ¾ÕÀÚ¸®°¡ ¼Ò¹®ÀÚ·Î ³Ö¾îÁü!!
+		//ê·¸ëƒ¥ ë„£ìœ¼ë©´ boardDTOë¡œ ì•ìë¦¬ê°€ ì†Œë¬¸ìë¡œ ë„£ì–´ì§!!
 		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}
 	
-	//D °Ô½Ã±Û »èÁ¦
+	//D ê²Œì‹œê¸€ ì‚­ì œ
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(@RequestParam("ai_id") int ai_id, RedirectAttributes rttr) {
 		
@@ -71,6 +71,4 @@ public class BoardController {
 		
 		return "redirect:/board/listAll";
 	}
-=======
->>>>>>> parent of 43906c4 (ë³´ë“œì»¨íŠ¸ë¡¤ëŸ¬ ìˆ˜ì •, ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸° ì¶”ê°€)
 }

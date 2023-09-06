@@ -49,5 +49,6 @@ public class BoardController {
 	public void listAll(Model model) {
 		
 		logger.info("show all list ...................");
+		model.addAttribute("list",boardservice.boardListAll());
 	}
 }

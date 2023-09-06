@@ -7,7 +7,7 @@
 
 <html>
 <head>
-<title>Home</title>
+<title>dummy</title>
 </head>
 <body>
 	<!-- header -->

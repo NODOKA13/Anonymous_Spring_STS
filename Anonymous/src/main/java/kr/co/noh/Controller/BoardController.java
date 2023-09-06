@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.noh.DTO.BoardDTO;
@@ -22,14 +23,14 @@ public class BoardController {
 	@Inject
 	private BoardService boardservice;
 	
-	//게시글 등록하는 페이지로 이동
+	//C 게시글 등록하는 페이지로 이동
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void BoardWriteGET() {
 
 		logger.info("board/write get ............");
 	}
 	
-	//게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
+	// 게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) {
 
@@ -44,11 +45,19 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	//게시글 전체 조회
+	//R 게시글 전체 조회
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public void listAll(Model model) {
 		
 		logger.info("show all list ...................");
 		model.addAttribute("list",boardservice.boardListAll());
+	}
+	
+	//R 게시글 상세 조회
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public void detail(@RequestParam("ai_id") int ai_id, Model model) {
+		
+		//그냥 넣으면 boardDTO로 앞자리가 소문자로 넣어짐!!
+		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}
 }

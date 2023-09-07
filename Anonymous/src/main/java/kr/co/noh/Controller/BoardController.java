@@ -39,7 +39,7 @@ public class BoardController {
 		
 		boardservice.BoardWrite(dto);
 
-		rttr.addFlashAttribute("result", "success");
+		rttr.addFlashAttribute("msg", "success");
 
 		//return "/board/success";
 		return "redirect:/board/listAll";
@@ -61,14 +61,22 @@ public class BoardController {
 		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}
 	
+	//U 게시글 수정
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public void update(int ai_id, Model model) {
+		
+		model.addAttribute(boardservice.BoardDetail(ai_id));
+	}
+	
 	//D 게시글 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(@RequestParam("ai_id") int ai_id, RedirectAttributes rttr) {
 		
 		boardservice.BoardDelete(ai_id);
 		
-		rttr.addFlashAttribute("result","success");
+		rttr.addFlashAttribute("msg","success");
 		
 		return "redirect:/board/listAll";
 	}
+	
 }

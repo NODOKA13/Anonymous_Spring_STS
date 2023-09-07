@@ -10,7 +10,7 @@
 <body>
 <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
-	<!-- 무언가 성공시 처리 완료문구가 뜸 -->
+	<!-- 성공처리 알림 스크립트 -->
 	<script>
 		var result = '${msg}';
 
@@ -18,6 +18,7 @@
 			alert("저리가 왼료되었습니다.");
 		}
 	</script>
+	<!-- /성공처리 알림 스크립트 -->
 	
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
@@ -38,7 +39,7 @@
 		<div class="container">
 			<div class="row">
 			
-			<!-- 뭉탱이용 폼 -->
+			<!-- 뭉탱이 -->
 			<div class="col-lg-9 mb-3">
 			<div class="row text-left mb-5">
 			<div class="col-lg-6 mb-3 mb-sm-0">
@@ -53,7 +54,7 @@
 			</div>
 			</div>
 			
-			<!-- 뭉탱이 start -->
+			<!-- 뭉탱이-게시글 -->
 			<c:forEach items="${list}" var="BoardDTO">
 			
 			<div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
@@ -74,10 +75,10 @@
 			</div>
 			</div>
 			</c:forEach>
-			<!-- 뭉탱이 end -->
+			<!-- /뭉탱이-게시글 -->
 			
 			</div>
-			<!-- 뭉탱이용 폼 end -->
+			<!-- /뭉탱이 -->
 			
 			</div>
 		</div>

@@ -19,25 +19,40 @@
 
 		<!--  Main wrapper -->
 		<div class="body-wrapper">
-
-		<!-- nav -->
-		<%@include file="include/nav.jsp"%>
 		
-		
+			<!-- nav -->
+			<%@include file="include/nav.jsp"%>
+			
 			<!-- Main content -->
-			<div class="col-md-12">
-				<!-- general form elements -->
-				<div class="box">
-					<div class="box-header with-border">
-						<h3 class="box-title">SUCCESS PAGE</h3>
-					</div>
-					<div class="box-body">SUCCESS!!!</div>
-					<!-- /.box-body -->
-					<div class="box-footer">Footer</div>
-					<!--/.box-footer-->
-				</div>
-			</div>
-
+			<div class="col-lg-8 d-flex align-items-stretch" style="user-select: auto;">
+            <div class="card w-100" style="user-select: auto;">
+              <div class="card-body p-4" style="user-select: auto;">
+                <h5 class="card-title fw-semibold mb-4" style="user-select: auto;">Recent Transactions</h5>
+                <div class="table-responsive" style="user-select: auto;">
+                  <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
+                    <tbody style="user-select: auto;">
+                      <tr style="user-select: auto;">
+                      
+                      <!-- 성공표시 -->
+	                    <div class="box">
+						<div class="box-header with-border">
+							<h3 class="box-title">SUCCESS PAGE</h3>
+						</div>
+						<div class="box-body">SUCCESS!!!</div>
+						<!-- /.box-body -->
+						<div class="box-footer">Footer</div>
+						<!--/.box-footer-->
+                      <!-- /성공표시 -->
+                      
+                      </tr>                       
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+			
+			
 		</div>
 	</div>
 

@@ -32,11 +32,32 @@
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      
-                      <!-- 더미 -->
-                      	이것은 더미 입니다
-                      <!-- /더미 -->
-                      
+                      	
+                      	<!-- 수정폼 -->
+                      	<div class="box-doby">
+                      		<div class="form-group">
+                      		<label for="exampleInputEmail1">제목</label> <input type="text" name="title"
+                      		class="form-control" value="${boardDTO.title }">
+                      		</div>
+                      	
+                      		<div class="form-group">
+                      		<label for="exampleInputPassword1">내용</label>
+                      		<textarea class="form-control" name="content" rows="3">${boardDTO.content }</textarea>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                      		<label for="exampleInputEmail1">작정자</label> <input type="text" name="title"
+                      		class="form-control" value="${boardDTO.user_ai_id }" readonly>
+                      		</div>
+                      	</div>
+                      	<!-- /수정폼 -->
+                      	
+                      	<!-- 버튼 -->
+                      	<div class="box-footer">
+                      		<button type="submit" class="btn btn-primary">저장</button>
+                      		<button type="submit" class="btn btn-warning">취소</button>
+                      	</div>
+                      	<!-- /버튼 -->
                       </tr>                       
                     </tbody>
                   </table>
@@ -44,9 +65,11 @@
               </div>
             </div>
           </div>
+			
+			
 		</div>
 	</div>
-	
+
 	<!-- js -->
 	<%@include file="include/js.jsp"%>
 </body>

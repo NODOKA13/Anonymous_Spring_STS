@@ -23,6 +23,26 @@
       
       <div class="container-fluid">
         <!--  Row 1 -->
+        			<div class="col-lg-8 d-flex align-items-stretch" style="user-select: auto;">
+            <div class="card w-100" style="user-select: auto;">
+              <div class="card-body p-4" style="user-select: auto;">
+                <div class="table-responsive" style="user-select: auto;">
+                  <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
+                    <tbody style="user-select: auto;">
+                      <tr style="user-select: auto;">
+                      
+                      <!-- 링크 -->
+                      	<a href="board/listAll">board/listAll</a><br>
+                      	<a href="board/write">board/write</a>
+                      </tr>       
+                      <!-- /링크 -->
+                                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="row">
           <div class="col-lg-8 d-flex align-items-strech">
             <div class="card w-100">

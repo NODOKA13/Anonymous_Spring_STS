@@ -3,7 +3,7 @@ package kr.co.noh.DTO;
 import java.sql.Date;
 
 public class BoardDTO {
-	private int ai_id;
+	private int ai_id; //게시글의 고유번호
 	private String title; //게시글의 제목
 	private String content; //게시글의 내용
 	private int viewcount; //게시글의 조회수

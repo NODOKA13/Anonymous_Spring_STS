@@ -39,9 +39,9 @@ public class BoardServiceImpl implements BoardService{
 
 	//글 수정 U
 	@Override
-	public void BoardUpdate(int ai_id) {
+	public void BoardUpdate(BoardDTO dto) {
 		// TODO Auto-generated method stub
-		boarddao.BoardUpdate(ai_id);
+		boarddao.BoardUpdate(dto);
 	}
 
 	//글 삭제 D

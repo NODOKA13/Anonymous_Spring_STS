@@ -5,9 +5,25 @@
 
 <head>
 <%@include file="include/head.jsp"%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
+<script>
+$(document).ready(function() {
+	var formObj = $("form[role='form']")
+	
+	console.log(formObj);
+	
+	$(".btn-warning").on("click", function() {
+		self.location = "listAll";
+	});
+	
+	$(".btn-primary").on("click", function() {
+		formObj.submit();
+	});
+});
+</script>
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
 		data-navbarbg="skin6" data-sidebartype="full"
@@ -32,7 +48,7 @@
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      	
+                      	<form method="post">
                       	<!-- 수정폼 -->
                       	<div class="box-doby">
                       		<div class="form-group">
@@ -57,6 +73,7 @@
                       		<button type="submit" class="btn btn-primary">저장</button>
                       		<button type="submit" class="btn btn-warning">취소</button>
                       	</div>
+                      	</form>
                       	<!-- /버튼 -->
                       </tr>                       
                     </tbody>

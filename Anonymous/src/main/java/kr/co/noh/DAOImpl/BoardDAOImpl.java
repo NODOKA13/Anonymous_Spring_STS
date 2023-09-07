@@ -40,9 +40,9 @@ public class BoardDAOImpl implements BoardDAO{
 	
 	//게시글 수정 U
 	@Override
-	public void BoardUpdate(int ai_id) {
+	public void BoardUpdate(BoardDTO dto) {
 		// TODO Auto-generated method stub
-		sqlsession.update(namespace+".BoardUpdate", ai_id);
+		sqlsession.update(namespace+".BoardUpdate", dto);
 	}
 	
 	//게시글 삭제 D

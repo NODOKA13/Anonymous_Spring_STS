@@ -15,7 +15,7 @@ public interface BoardService {
 	public BoardDTO BoardDetail(int ai_id);
 	
 	//글 수정 U
-	public void BoardUpdate(int ai_id);
+	public void BoardUpdate(BoardDTO dto);
 	
 	//글 삭제 D
 	public void BoardDelete(int ai_id);

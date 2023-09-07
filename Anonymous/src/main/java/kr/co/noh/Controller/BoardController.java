@@ -23,14 +23,14 @@ public class BoardController {
 	@Inject
 	private BoardService boardservice;
 	
-	//게시글 등록하는 페이지로 이동
+	//C GET 게시글 등록하는 페이지로 이동
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void BoardWriteGET() {
 
 		logger.info("board/write get ............");
 	}
 	
-	//게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
+	//C POST 게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) {
 
@@ -45,7 +45,7 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	//게시글 전체 조회
+	//R 게시글 전체 조회
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public void listAll(Model model) {
 		
@@ -61,11 +61,23 @@ public class BoardController {
 		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}
 	
-	//U 게시글 수정
+	//U GET 게시글 수정
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public void update(int ai_id, Model model) {
+	public void updateget(int ai_id, Model model) {
 		
 		model.addAttribute(boardservice.BoardDetail(ai_id));
+	}
+	
+	//U POST 게시글 수정
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String updatepost(BoardDTO dto, RedirectAttributes rttr) {
+		
+		logger.info("board/update POST...............");
+		
+		boardservice.BoardUpdate(dto);
+		rttr.addFlashAttribute("msg", "sucess");
+		
+		return "redirect:/board/listAll";
 	}
 	
 	//D 게시글 삭제

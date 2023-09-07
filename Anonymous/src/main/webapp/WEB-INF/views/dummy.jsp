@@ -8,29 +8,6 @@
 </head>
 
 <body>
-<script>
-		$(document).ready(function() {
-			var formObj = $("form[role='form']");
-
-			console.log(formObj);
-
-		$(".btn-warning").on("click", function() {
-			formObj.attr("action", "/board/update");
-			formObj.attr("method", "get");
-			formObj.submit();
-		});
-
-		$(".btn-danger").on("click", function() {
-			formObj.attr("action", "/board/delete");
-			formObj.submit();
-		});
-
-		$(".btn-primary").on("click", function() {
-			self.location = "/board/listAll";
-		});
-	});
-</script>
-
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
 		data-navbarbg="skin6" data-sidebartype="full"
@@ -55,34 +32,8 @@
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      				<form role="form" method="post">
-				<input type="hidden" name="ai_id" value="${boardDTO.ai_id}">
-			</form>
-
-			<div class="box-body">
-				<div class="form-group">
-					<label for="exampleInputEmaill">Title</label> <input type="text"
-						name='title' class="form-control" value="${boardDTO.title}"
-						readonly="readonly">
-				</div>
-				<div class="form-group">
-					<label for="examplelnputPassword1">Content</label>
-					<textarea class="form-control" name="content" rows="3"
-						readonly="readonly">${boardDTO.content}</textarea>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Writer</label> <input type="text"
-						name="writer" class="form-control" value="${boardDTO.user_ai_id}"
-						readonly="readonly">
-				</div>
-			</div>
-			<!-- /.box-body -->
-			<div class="box-footer">
-				<button type="submit" class="btn btn-warning">수정</button>
-				<button type="submit" class="btn btn-danger">삭제</button>
-				<button type="submit" class="btn btn-primary">목록</button>
-			</div>
-
+                      <!-- 이곳에 내용 작성 -->
+                      	이것은 더미 입니다
                       </tr>                       
                     </tbody>
                   </table>

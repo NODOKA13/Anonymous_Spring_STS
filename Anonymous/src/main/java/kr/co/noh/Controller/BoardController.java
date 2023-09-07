@@ -57,6 +57,11 @@ public class BoardController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(@RequestParam("ai_id") int ai_id, Model model) {
 		
+		//상세조회시 viewcount의 값에 +1
+		BoardDTO dto = boardservice.BoardDetail(ai_id);
+		dto.setViewcount(dto.getViewcount() + 1);
+		boardservice.BoardUpdate(dto);
+		
 		//그냥 넣으면 boardDTO로 앞자리가 소문자로 넣어짐!!
 		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}

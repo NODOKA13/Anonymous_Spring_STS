@@ -18,35 +18,35 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	//´ñ±Û ¾²±â C
 	@Override
-	public void ArticleWrite(ArticleDTO articleDTO) {
+	public void ArticleWrite(ArticleDTO articleDTO) throws Exception{
 		// TODO Auto-generated method stub
 		articledao.ArticleWrite(articleDTO);
 	}
 	
 	//´ñ±Û ÀüÁ¦Á¶È¸ R
 	@Override
-	public List<ArticleDTO> ArticleListAll(int ai_id) {
+	public List<ArticleDTO> ArticleListAll(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		return articledao.ArticleListAll(ai_id);
 	}
 
 	//´ñ±Û »óÁ¦Á¶È¸ R
 	@Override
-	public ArticleDTO ArticleDetail(int ai_id) {
+	public ArticleDTO ArticleDetail(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		return articledao.ArticleDetail(ai_id);
 	}
 
 	//´ñ±Û ¼öÁ¤ U
 	@Override
-	public void ArticleUpdate(int ai_id) {
+	public void ArticleUpdate(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		articledao.ArticleUpdate(ai_id);
 	}
 
 	//´ñ±Û »èÁ¦ D
 	@Override
-	public void ArticleDelete(int ai_id) {
+	public void ArticleDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		articledao.ArticleDelete(ai_id);
 	}

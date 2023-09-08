@@ -17,14 +17,14 @@ public class ArticleDAOImpl implements ArticleDAO{
 	
 	//´ñ±Û ÀÛ¼º C
 	@Override
-	public void ArticleWrite(ArticleDTO articleDTO) {
+	public void ArticleWrite(ArticleDTO articleDTO) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.insert(namespace+".ArticleWrite",articleDTO);
 	}
 
 	//´ñ±Û ÀüÁ¦Á¶È¸ R
 	@Override
-	public List<ArticleDTO> ArticleListAll(int ai_id) {
+	public List<ArticleDTO> ArticleListAll(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		List<ArticleDTO> articleListAll = sqlsession.selectList(namespace+".ArticleListAll",ai_id);
 		return null;
@@ -32,7 +32,7 @@ public class ArticleDAOImpl implements ArticleDAO{
 
 	//´ñ±Û »óÁ¦Á¶È¸ R
 	@Override
-	public ArticleDTO ArticleDetail(int ai_id) {
+	public ArticleDTO ArticleDetail(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		ArticleDTO ArticleDetail = sqlsession.selectOne(namespace+".ArticleDetail",ai_id);
 		return ArticleDetail;
@@ -40,14 +40,14 @@ public class ArticleDAOImpl implements ArticleDAO{
 	
 	//´ñ±Û ¼öÁ¤ U
 	@Override
-	public void ArticleUpdate(int ai_id) {
+	public void ArticleUpdate(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.update(namespace+".ArticleUpdate",ai_id);
 	}
 
 	//´ñ±Û »èÁ¦ D
 	@Override
-	public void ArticleDelete(int ai_id) {
+	public void ArticleDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.delete(namespace+".ArticleDelete",ai_id);
 	}

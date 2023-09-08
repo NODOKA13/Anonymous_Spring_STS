@@ -18,7 +18,7 @@ public class UserDAOTest {
 	private UserDAO userdao;
 	
 	@Test
-	public void testUserDetail() {
+	public void testUserDetail() throws Exception {
 		System.out.println("--스타트--");
 		System.out.println(userdao.UserDetail(1));
 		System.out.println("디테일성공");

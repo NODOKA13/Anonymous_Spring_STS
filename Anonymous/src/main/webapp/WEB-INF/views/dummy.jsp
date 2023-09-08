@@ -37,6 +37,17 @@
                       	이것은 더미 입니다
                       <!-- /더미 -->
                       
+                      <!-- 더미칸 -->
+                      <!-- 
+                      <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+							<div class="row align-items-center">
+								<div class="col-md-8 mb-3 mb-sm-0">
+								
+								</div>
+							</div>
+						</div>
+                       -->
+                      
                       </tr>                       
                     </tbody>
                   </table>

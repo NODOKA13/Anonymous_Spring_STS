@@ -15,14 +15,14 @@ public class UserDAOImpl implements UserDAO{
 	
 	//유저 추가 C
 	@Override
-	public void UserAdd(UserDTO userDTO) {
+	public void UserAdd(UserDTO userDTO) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.insert(namespace+".UserAdd", userDTO);
 	}
 	
 	//유저 조회 R
 	@Override
-	public UserDTO UserDetail(int ai_id) {
+	public UserDTO UserDetail(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		//System.out.println("DAOImpl 진입");
 		UserDTO userDetail = sqlsession.selectOne(namespace + ".UserDetail", ai_id);
@@ -32,14 +32,14 @@ public class UserDAOImpl implements UserDAO{
 	
 	//유저 수정 U
 	@Override
-	public void UserUpdate(int ai_id) {
+	public void UserUpdate(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.update(namespace+".UserUpdate", ai_id);
 	}
 	
 	//유저 삭제 D
 	@Override
-	public void UserDelete(int ai_id) {
+	public void UserDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.delete(namespace+".UserDelete", ai_id);
 	}

@@ -30,4 +30,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from board where ai_id=#{ai_id}
 	</delete>
 	
+	<!-- 페이징 -->
+	<select id="listPage" resultType="kr.co.noh.DTO.BoardDTO">
+		<![CDATA[
+			select * from board
+			where ai_id > 0
+			order by ai_id desc, date desc
+			limit #{page}, 10
+		]]>
+	</select>
+	
+	<!-- 페이징 -->
+	<select id="listCriteria" resultType="kr.co.noh.DTO.BoardDTO">
+			<![CDATA[
+				select * from board
+				where ai_id > 0
+				order by ai_id desc, date desc
+				limit #{pageStart}, #{perPageNum}
+			]]>
+	</select>
+	
+	<!-- 페이징 -->
+	<select id="countPaging" resultType="int">
+			<![CDATA[
+				select count(ai_id)
+				from board
+				where ai_id > 0
+			]]>
+	</select>
+	
 </mapper>

@@ -16,28 +16,28 @@ public class UserServiceImpl implements UserService{
 	
 	//유저 추가 C
 	@Override
-	public void UserAdd(UserDTO userDTO) {
+	public void UserAdd(UserDTO userDTO) throws Exception{
 		// TODO Auto-generated method stub
 		userdao.UserAdd(userDTO);
 	}
 
 	//유저 상세조회 R
 	@Override
-	public UserDTO UserDetail(int ai_id) {
+	public UserDTO UserDetail(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		return userdao.UserDetail(ai_id);
 	}
 
 	//유저 수정 U
 	@Override
-	public void UserUpdate(int ai_id) {
+	public void UserUpdate(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		userdao.UserUpdate(ai_id);
 	}
 
 	//유저 삭제 D
 	@Override
-	public void UserDelete(int ai_id) {
+	public void UserDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		userdao.UserDelete(ai_id);
 	}

@@ -61,19 +61,25 @@
 						</div>
 
 						<!-- 뭉탱이-게시글 -->
-						<c:forEach items="${list}" var="BoardDTO">
+						<c:forEach items="${list}" var="boardDTO">
 
 							<div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
 								<div class="row align-items-center">
 									<div class="col-md-8 mb-3 mb-sm-0">
-										<h5>
-											<a href="detail?ai_id=${BoardDTO.ai_id }" class="text-primary">${BoardDTO.title }</a>
-										</h5>
+									
+										<h3>
+											<a href="/board/detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
+										</h3>
+										<h6>
+											작성자: 익명 / 작성일: ${boardDTO.date}
+										</h6>
+										
 										<!-- 댓글 미리보기 예시 -->
 										<!-- <div class="text-sm op-5"> <a class="text-black mr-2" href="#">#C++</a></div> -->
 									</div>
 								</div>
 							</div>
+							
 						</c:forEach>
 						<!-- /뭉탱이-게시글 -->
 						
@@ -86,19 +92,19 @@
 										<ul class="pagination">
 										
 											<c:if test="${pageMaker.prev}">
-												<li><a href="listPage?page=${pageMaker.startPage - 1}">&laquo;</a></li>
+												<li><a href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1)}">&laquo;</a></li>
 											</c:if>
 	
 											<c:forEach begin="${pageMaker.startPage }" 
 												end="${pageMaker.endPage }" var="idx">
 													<li
 														<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-														<a href="listPage?page=${idx}">${idx}</a>
+														<a href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
 													</li>
 											</c:forEach>
 											
 											<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-												<li><a href="listPage?page=${pageMaker.endPage +1}">&raquo;</a></li>
+												<li><a href="listPage${pageMaker.makeQuery(pageMaker.endPage +1)}">&raquo;</a></li>
 											</c:if>
 											
 										</ul>

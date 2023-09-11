@@ -32,6 +32,7 @@
                       <tr style="user-select: auto;">
                       
                       <!-- 링크 -->
+                      
                       	<a href="board/listPage">board/listPage</a><br>
                       	<a href="board/write">board/write</a>
                       </tr>       

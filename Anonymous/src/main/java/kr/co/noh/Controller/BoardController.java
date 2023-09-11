@@ -60,7 +60,7 @@ public class BoardController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public void detail(@RequestParam("ai_id") int ai_id, Model model) throws Exception {
 
-		// 상세조회시 viewcount의 값에 +1
+		// 상세조회시 viewcount의 값에 +1 (조회수 증가)
 		BoardDTO dto = boardservice.BoardDetail(ai_id);
 		dto.setViewcount(dto.getViewcount() + 1);
 		boardservice.BoardUpdate(dto);
@@ -123,5 +123,39 @@ public class BoardController {
 		System.out.println(pageMaker.getEndPage());
 		
 		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	// R 게시글 상세 조회 수정버전
+	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
+	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+		
+		// 상세조회시 viewcount의 값에 +1 (조회수 증가)
+		BoardDTO dto = boardservice.BoardDetail(ai_id);
+		dto.setViewcount(dto.getViewcount() + 1);
+		boardservice.BoardUpdate(dto);
+		
+		// 그냥 넣으면 boardDTO로 앞자리가 소문자로 넣어짐!!
+		model.addAttribute(boardservice.BoardDetail(ai_id));
+	}
+	
+	// D 게시글 삭제 수정버전
+	@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
+	public String delete(@RequestParam("ai_id") int ai_id, Criteria cri, RedirectAttributes rttr) throws Exception {
+		
+		boardservice.BoardDelete(ai_id);
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addFlashAttribute("msg", "success");
+		
+		
+		return "redirect:/board/listPage";
+	}
+	
+	// U 게시글 수정 수정버전
+	@RequestMapping(value = "/updatePage", method = RequestMethod.GET)
+	public void updatePageGET(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model)throws Exception{
+		model.addAttribute(boardservice.BoardDetail(ai_id));
+		
 	}
 }

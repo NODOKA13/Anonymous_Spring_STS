@@ -120,6 +120,8 @@ public class BoardController {
 
 		pageMaker.setTotalCount(boardservice.listCountCriteria(cri));
 
+		System.out.println(pageMaker.getEndPage());
+		
 		model.addAttribute("pageMaker", pageMaker);
 	}
 }

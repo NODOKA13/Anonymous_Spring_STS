@@ -32,7 +32,7 @@
                       <tr style="user-select: auto;">
                       
                       <!-- 링크 -->
-                      	<a href="board/listAll">board/listAll</a><br>
+                      	<a href="board/listPage">board/listPage</a><br>
                       	<a href="board/write">board/write</a>
                       </tr>       
                       <!-- /링크 -->

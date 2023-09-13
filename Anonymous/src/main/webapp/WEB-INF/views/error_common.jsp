@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ERROR PAGE8'</title>
+<title>ERROR PAGE</title>
 </head>
 <body>
-	<h4>${exception.getMessage() }</h4>
+	<h4>${exception.toString() }</h4>
 	<ul>
-		<c:forEach items="{{exception.getStackTrace()}" var="stack">
+		<c:forEach items="${exception.getStackTrace()}" var="stack">
 			<li>${stack.toString() }</li>
 		</c:forEach>
 	</ul>

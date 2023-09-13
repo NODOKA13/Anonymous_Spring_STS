@@ -128,7 +128,7 @@ public class BoardController {
 	// R 게시글 상세 조회 수정버전
 	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
 	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
-		
+		System.out.println("detailPage");
 		// 상세조회시 viewcount의 값에 +1 (조회수 증가)
 		BoardDTO dto = boardservice.BoardDetail(ai_id);
 		dto.setViewcount(dto.getViewcount() + 1);

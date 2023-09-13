@@ -22,9 +22,6 @@ public interface BoardDAO {
 	public void BoardDelete(int ai_id) throws Exception;
 	
 	//ÆäÀÌÂ¡
-	public List<BoardDTO> listAll()throws Exception;
-	
-	//ÆäÀÌÂ¡
 	public List<BoardDTO> listPage(int page) throws Exception;
 	
 	//ÆäÀÌÂ¡

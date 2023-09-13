@@ -55,12 +55,6 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlsession.delete(namespace + ".BoardDelete", ai_id);
 	}
 
-	@Override
-	public List<BoardDTO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	// ∆‰¿Ã¬°
 	@Override
 	public List<BoardDTO> listPage(int page) throws Exception {

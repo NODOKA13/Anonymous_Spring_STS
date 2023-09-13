@@ -88,27 +88,27 @@
 							<div class="row align-items-center">
 								<div class="col-md-8 mb-3 mb-sm-0">
 								
-									<div class="text-center">
+								<nav aria-label="Page navigation example">
 										<ul class="pagination">
 										
 											<c:if test="${pageMaker.prev}">
-												<li><a href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1)}">&laquo;</a></li>
+												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1)}">&laquo;</a></li>
 											</c:if>
 	
 											<c:forEach begin="${pageMaker.startPage }" 
 												end="${pageMaker.endPage }" var="idx">
-													<li
+													<li class="page-item"
 														<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-														<a href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
+														<a class="page-link" href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
 													</li>
 											</c:forEach>
 											
 											<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-												<li><a href="listPage${pageMaker.makeQuery(pageMaker.endPage +1)}">&raquo;</a></li>
+												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.endPage +1)}">&raquo;</a></li>
 											</c:if>
 											
 										</ul>
-									</div>
+								</nav>
 								
 								</div>
 							</div>
@@ -117,8 +117,8 @@
 						
 					</div>
 					<!-- /뭉탱이 -->
-					
 				</div>
+				
 			</div>
 		</div>
 	</div>

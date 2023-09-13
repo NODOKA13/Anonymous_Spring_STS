@@ -22,9 +22,6 @@ public interface BoardService {
 	public void BoardDelete(int ai_id) throws Exception;
 	
 	//ÆäÀÌÂ¡
-	public List<BoardDTO> listAll() throws Exception;
-	
-	//ÆäÀÌÂ¡
 	public List<BoardDTO> listCriteria(Criteria cri) throws Exception;
 	
 	//ÆäÀÌÂ¡

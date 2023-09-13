@@ -76,35 +76,10 @@ $(document).ready(function() {
 			
 						<!-- 버튼 -->
 						<div class="box-footer">
-							<button type="submit" class="btn btn-warning updateBtn">수정</button>
-							<button type="submit" class="btn btn-danger deleteBtn">삭제</button>
-							<button type="submit" class="btn btn-primary goListBtn">목록</button>
+							<button type="submit" class="btn btn-warning updateBtn" name="ai_id" value = "${boardDTO.ai_id}">수정</button>
+							<button type="submit" class="btn btn-danger deleteBtn" name="page" value = "${cri.page}">삭제</button>
+							<button type="submit" class="btn btn-primary goListBtn" name="perPageNum" value = "${cri.perPageNum}">목록</button>
 						</div>
-						
-						<form role="form" action="updatePage" method="post">
-							<input type="hidden" name="ai_id" value="${boardDTO.ai_id }">
-							<input type="hidden" name="page" value="${cri.page }">
-							<input type="hidden" name="perPageNum" value="${cri.perPageNum}">
-						</form>
-						
-						<script>
-							$(".goListBtn").on("click", function()){
-								formObj.attr("method", "get");
-								formObj.attr("action", "/board/listPage");
-								formObj.submit();
-							}
-							
-							$(".deleteBtn").on("click", function()){
-								formObj.attr("action","/board/deletePage");
-								formObj.submit();
-							}
-							
-							$(".updateBtn").on("click",function()){
-								formObj.attr("action", "/board/updatePage");
-								formObj.attr("method", "get");
-								formObj.submit();
-							}
-						</script>
 						<!-- /버튼 -->
 						
                       

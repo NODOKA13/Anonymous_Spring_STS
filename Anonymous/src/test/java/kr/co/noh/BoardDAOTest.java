@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import kr.co.noh.Controller.BoardController;
 import kr.co.noh.DAO.BoardDAO;
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
@@ -21,7 +20,7 @@ import kr.co.noh.DTO.Criteria;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml" })
 public class BoardDAOTest {
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BoardDAOTest.class);
 
 	@Inject
 	private BoardDAO boardDAO;

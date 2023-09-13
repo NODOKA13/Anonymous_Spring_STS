@@ -54,13 +54,6 @@ public class BoardServiceImpl implements BoardService{
 	
 	//ÆäÀÌÂ¡
 	@Override
-	public List<BoardDTO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return boarddao.listAll();
-	}
-
-	//ÆäÀÌÂ¡
-	@Override
 	public List<BoardDTO> listCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return boarddao.listCriteria(cri);

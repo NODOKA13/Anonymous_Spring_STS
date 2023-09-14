@@ -95,13 +95,13 @@
 												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1)}">&laquo;</a></li>
 											</c:if>
 	
-											<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-											  <li class="page-item">
-											    <c:set var="activeClass" value="${pageMaker.cri.page == idx ? 'active' : ''}"/>
-											    <a class="page-link ${activeClass}" href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
-											  </li>
+											<c:forEach begin="${pageMaker.startPage }" 
+												end="${pageMaker.endPage }" var="idx">
+													<li class="page-item"
+														<c:out value="${pageMaker.cri.page == idx ? 'class=active' : ''}"/>>
+														<a class="page-link" href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
+													</li>
 											</c:forEach>
-
 											
 											<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.endPage +1)}">&raquo;</a></li>

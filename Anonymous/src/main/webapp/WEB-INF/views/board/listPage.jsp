@@ -17,7 +17,7 @@
 		var result = '${msg}';
 
 		if (result == 'success') {
-			alert("저리가 왼료되었습니다.");
+			alert("처리가 완료되었습니다.");
 		}
 	</script>
 	<!-- /성공처리 알림 스크립트 -->
@@ -68,7 +68,7 @@
 									<div class="col-md-8 mb-3 mb-sm-0">
 									
 										<h3>
-											<a href="/board/detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
+											<a href="detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
 										</h3>
 										<h6>
 											작성자: 익명 / 작성일: ${boardDTO.date}

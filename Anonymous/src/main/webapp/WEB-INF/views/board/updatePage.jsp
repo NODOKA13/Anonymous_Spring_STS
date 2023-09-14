@@ -49,7 +49,6 @@ $(document).ready(function() {
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
                       	<form method="post">
-                      	
                       	<!-- 수정폼 -->
                       	<div class="box-doby">
                       		<div class="form-group">
@@ -76,7 +75,6 @@ $(document).ready(function() {
                       	</div>
                       	</form>
                       	<!-- /버튼 -->
-                      	
                       </tr>                       
                     </tbody>
                   </table>

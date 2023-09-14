@@ -64,10 +64,7 @@
 
 
 								<button class="btn btn-outline-primary"
-									onclick="location.href='board_Modify?num=${boardDTO.ai_id}'">수정하기
-								</button>
-								<button class="btn btn-outline-primary"
-									onclick="location.href='article_Insert?num=${boardDTO.ai_id}&member=${boardDTO.user_AI_ID}'">댓글작성
+									onclick="location.href='update?ai_id=${boardDTO.ai_id}'">수정하기
 								</button>
 								<button type="button" class="btn btn-outline-primary"
 									onclick="history.back()">뒤로가기</button>

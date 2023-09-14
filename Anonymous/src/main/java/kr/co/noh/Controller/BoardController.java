@@ -98,8 +98,10 @@ public class BoardController {
 
 		return "redirect:/board/listPage";
 	}
-
-	// 페이징
+	
+	//------------------------------------------------------------------------------------------------------
+	
+	// 페이징 list 테스트
 	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
 	public void listAll(Criteria cri, Model model) throws Exception {
 
@@ -108,7 +110,7 @@ public class BoardController {
 		model.addAttribute("list", boardservice.listCriteria(cri));
 	}
 
-	// 페이징
+	// 페이징 list
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
 	public void listPage(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
 		logger.info(cri.toString());
@@ -120,15 +122,12 @@ public class BoardController {
 
 		pageMaker.setTotalCount(boardservice.listCountCriteria(cri));
 
-		System.out.println(pageMaker.getEndPage());
-		
 		model.addAttribute("pageMaker", pageMaker);
 	}
 	
-	// R 게시글 상세 조회 수정버전
+	// R 페이징 게시글 상세 조회
 	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
-	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
-		System.out.println("detailPage");
+	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri ,Model model) throws Exception {
 		// 상세조회시 viewcount의 값에 +1 (조회수 증가)
 		BoardDTO dto = boardservice.BoardDetail(ai_id);
 		dto.setViewcount(dto.getViewcount() + 1);
@@ -138,7 +137,7 @@ public class BoardController {
 		model.addAttribute(boardservice.BoardDetail(ai_id));
 	}
 	
-	// D 게시글 삭제 수정버전
+	// D 페이징 게시글 삭제
 	@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
 	public String delete(@RequestParam("ai_id") int ai_id, Criteria cri, RedirectAttributes rttr) throws Exception {
 		
@@ -152,7 +151,7 @@ public class BoardController {
 		return "redirect:/board/listPage";
 	}
 	
-	// U 게시글 수정 수정버전
+	// U 페이징 게시글 수정
 	@RequestMapping(value = "/updatePage", method = RequestMethod.GET)
 	public void updatePageGET(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model)throws Exception{
 		model.addAttribute(boardservice.BoardDetail(ai_id));

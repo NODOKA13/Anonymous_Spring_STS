@@ -1,9 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <aside class="left-sidebar">
 	<!-- Sidebar scroll-->
 	<div>
 		<div
 			class="brand-logo d-flex align-items-center justify-content-between">
-			<a href="./index.html" class="text-nowrap logo-img"> <img
+			<a href="${contextPath}/." class="text-nowrap logo-img"> <img
 				src="${contextPath}/resources/images/logos/dark-logo.svg" width="180" alt="" />
 			</a>
 			<div
@@ -19,17 +23,26 @@
 					class="ti ti-dots nav-small-cap-icon fs-4"></i> <span
 					class="hide-menu">Home</span></li>
 				<li class="sidebar-item"><a class="sidebar-link"
-					href="./index.html" aria-expanded="false"> <span> <i
+					href="${contextPath }/" aria-expanded="false"> <span> <i
 							class="ti ti-layout-dashboard"></i>
-					</span> <span class="hide-menu">Dashboard</span>
+					</span> <span class="hide-menu">Home</span>
 				</a></li>
 				<li class="nav-small-cap"><i
 					class="ti ti-dots nav-small-cap-icon fs-4"></i> <span
-					class="hide-menu">UI COMPONENTS</span></li>
+					class="hide-menu">Pages</span></li>
 				<li class="sidebar-item"><a class="sidebar-link"
-					href="./ui-buttons.html" aria-expanded="false"> <span> <i
+					href="${contextPath}/board/listPage" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>
-					</span> <span class="hide-menu">Buttons</span>
+					</span> <span class="hide-menu">Board</span></a>
+				<li class="sidebar-item"><a class="sidebar-link"
+					href="${contextPath}/board/write" aria-expanded="false"> <span> <i
+							class="ti ti-article"></i>
+					</span> <span class="hide-menu">Write</span></a>
+				<li class="sidebar-item"><a class="sidebar-link"
+					href="${contextPath}/dummy" aria-expanded="false"> <span> <i
+							class="ti ti-article"></i>
+					</span> <span class="hide-menu">Dummy</span></a>
+				<!-- 안쓰는 버튼 숨기기
 				</a></li>
 				<li class="sidebar-item"><a class="sidebar-link"
 					href="./ui-alerts.html" aria-expanded="false"> <span> <i
@@ -51,6 +64,7 @@
 							<i class="ti ti-typography"></i>
 					</span> <span class="hide-menu">Typography</span>
 				</a></li>
+				
 				<li class="nav-small-cap"><i
 					class="ti ti-dots nav-small-cap-icon fs-4"></i> <span
 					class="hide-menu">AUTH</span></li>
@@ -77,7 +91,9 @@
 							<i class="ti ti-aperture"></i>
 					</span> <span class="hide-menu">Sample Page</span>
 				</a></li>
+				 -->
 			</ul>
+			<!-- 광고판 제거 
 			<div
 				class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
 				<div class="d-flex">
@@ -95,6 +111,7 @@
 					</div>
 				</div>
 			</div>
+			-->
 		</nav>
 		<!-- End Sidebar navigation -->
 	</div>

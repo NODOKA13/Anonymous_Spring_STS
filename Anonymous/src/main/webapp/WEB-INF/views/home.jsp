@@ -34,7 +34,8 @@
                       <!-- 링크 -->
                       
                       	<a href="board/listPage">board/listPage</a><br>
-                      	<a href="board/write">board/write</a>
+                      	<a href="board/write">board/write</a><br>
+                      	<a href="sboard/list">sboard/list</a>
                       </tr>       
                       <!-- /링크 -->
                                       

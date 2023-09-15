@@ -4,7 +4,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 
 <head>
-<%@include file="include/head.jsp"%>
+<%@include file="../include/head.jsp"%>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 		data-sidebar-position="fixed" data-header-position="fixed">
 		
 		<!-- Sidebar Start -->
-		<%@include file="include/sidebar.jsp"%>
+		<%@include file="../include/sidebar.jsp"%>
 		<!--  Sidebar End -->
 
 		<!--  Main wrapper -->
@@ -34,7 +34,7 @@
 			<!--  Header Start -->
 
 			<!-- nav -->
-			<%@include file="include/nav.jsp"%>
+			<%@include file="../include/nav.jsp"%>
 		
 		<div class="container">
 			<div class="row">
@@ -85,7 +85,7 @@
 		
 		</div>
 	</div>
-	<%@include file="include/js.jsp"%>
+	<%@include file="../include/js.jsp"%>
 </body>
 
 </html>

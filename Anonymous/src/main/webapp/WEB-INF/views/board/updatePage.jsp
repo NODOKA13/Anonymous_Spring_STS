@@ -4,7 +4,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 
 <head>
-<%@include file="include/head.jsp"%>
+<%@include file="../include/head.jsp"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
@@ -30,14 +30,14 @@ $(document).ready(function() {
 		data-sidebar-position="fixed" data-header-position="fixed">
 
 		<!-- Sidebar Start -->
-		<%@include file="include/sidebar.jsp"%>
+		<%@include file="../include/sidebar.jsp"%>
 		<!--  Sidebar End -->
 
 		<!--  Main wrapper -->
 		<div class="body-wrapper">
 		
 			<!-- nav -->
-			<%@include file="include/nav.jsp"%>
+			<%@include file="../include/nav.jsp"%>
 			
 			<!-- Main content -->
 			<div class="col-lg-8 d-flex align-items-stretch" style="user-select: auto;">
@@ -95,6 +95,6 @@ $(document).ready(function() {
 	</div>
 
 	<!-- js -->
-	<%@include file="include/js.jsp"%>
+	<%@include file="../include/js.jsp"%>
 </body>
 </html>

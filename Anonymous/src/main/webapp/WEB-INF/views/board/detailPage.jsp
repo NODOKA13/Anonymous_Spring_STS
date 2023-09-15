@@ -5,7 +5,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <head>
-<%@include file="include/head.jsp"%>
+<%@include file="../include/head.jsp"%>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 		data-sidebar-position="fixed" data-header-position="fixed">
 
 		<!-- Sidebar Start -->
-		<%@include file="include/sidebar.jsp"%>
+		<%@include file="../include/sidebar.jsp"%>
 		<!--  Sidebar End -->
 
 		<!--  Main wrapper -->
@@ -59,7 +59,7 @@
 			<!--  Header Start -->
 
 			<!-- nav -->
-			<%@include file="include/nav.jsp"%>
+			<%@include file="../include/nav.jsp"%>
 			<div class="container-fluid">
 				<div class="container-fluid">
 					<div class="card">
@@ -143,7 +143,7 @@
 			</div>
 		</div>
 	</div>
-	<%@include file="include/js.jsp"%>
+	<%@include file="../include/js.jsp"%>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 
 <head>
-<%@include file="include/head.jsp"%>
+<%@include file="../include/head.jsp"%>
 </head>
 
 <body>
@@ -14,14 +14,14 @@
 		data-sidebar-position="fixed" data-header-position="fixed">
 
 		<!-- Sidebar Start -->
-		<%@include file="include/sidebar.jsp"%>
+		<%@include file="../include/sidebar.jsp"%>
 		<!--  Sidebar End -->
 
 		<!--  Main wrapper -->
 		<div class="body-wrapper">
 		
 			<!-- nav -->
-			<%@include file="include/nav.jsp"%>
+			<%@include file="../include/nav.jsp"%>
 			
 			<!-- Main content -->
 			<div class="col-lg-8 d-flex align-items-stretch" style="user-select: auto;">
@@ -57,6 +57,6 @@
 	</div>
 
 	<!-- js -->
-	<%@include file="include/js.jsp"%>
+	<%@include file="../include/js.jsp"%>
 </body>
 </html>

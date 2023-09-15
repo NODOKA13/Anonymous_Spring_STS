@@ -30,14 +30,14 @@ public class BoardController {
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void BoardWriteGET() {
 
-		logger.info("board/write get ............");
+		logger.info("write get ............");
 	}
 
 	// C POST 게시글 등록, p210 RedirectAttributes로 데이터 전송 숨기기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String BoardWritePOST(BoardDTO dto, Model model, RedirectAttributes rttr) throws Exception {
 
-		logger.info("board/write post ............");
+		logger.info("write post ............");
 		logger.info(dto.toString());
 
 		boardservice.BoardWrite(dto);
@@ -74,13 +74,14 @@ public class BoardController {
 	public void updateget(int ai_id, Model model) throws Exception {
 
 		model.addAttribute(boardservice.BoardDetail(ai_id));
+		System.out.println("get - " + boardservice.BoardDetail(ai_id));
 	}
 
 	// U POST 게시글 수정
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String updatepost(BoardDTO dto, RedirectAttributes rttr) throws Exception {
 
-		logger.info("board/update POST...............");
+		logger.info("update POST...............");
 
 		boardservice.BoardUpdate(dto);
 		rttr.addFlashAttribute("msg", "sucess");
@@ -139,8 +140,8 @@ public class BoardController {
 	
 	// D 페이징 게시글 삭제
 	@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
-	public String delete(@RequestParam("ai_id") int ai_id, Criteria cri, RedirectAttributes rttr) throws Exception {
-		
+	public String deletePage(@RequestParam("ai_id") int ai_id, Criteria cri, RedirectAttributes rttr) throws Exception {
+		System.out.println("딜리트페이지");
 		boardservice.BoardDelete(ai_id);
 		
 		rttr.addAttribute("page", cri.getPage());
@@ -151,10 +152,22 @@ public class BoardController {
 		return "redirect:/board/listPage";
 	}
 	
-	// U 페이징 게시글 수정
+	// U 페이징 게시글 수정 GET
 	@RequestMapping(value = "/updatePage", method = RequestMethod.GET)
 	public void updatePageGET(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri, Model model)throws Exception{
 		model.addAttribute(boardservice.BoardDetail(ai_id));
+	}
+	
+	// U 페이징 게시글 수정 POST
+	@RequestMapping(value = "/updatePage", method = RequestMethod.POST)
+	public String updatePagePOST(BoardDTO dto, Criteria cri, RedirectAttributes rttr)throws Exception{
+		boardservice.BoardUpdate(dto);
 		
+		System.out.println(dto);
+		rttr.addAttribute("page",cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		rttr.addFlashAttribute("msg","success");
+		
+		return "redirect:/board/listPage";
 	}
 }

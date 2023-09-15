@@ -16,7 +16,7 @@ $(document).ready(function() {
 	console.log(formObj);
 	
 	$(".btn-warning").on("click", function() {
-		self.location = "listAll";
+		self.location = "listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 	});
 	
 	$(".btn-primary").on("click", function() {
@@ -48,21 +48,28 @@ $(document).ready(function() {
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      	<form method="post">
+                      	<form role="form" action="updatePage" method="post">
+                      		<input type="hidden" name="page" value = "${cri.page }">
+                      		<input type="hidden" name="perPageNum" value= "${cri.perPageNum }">
+                      		<!-- post하지 않는 데이터도 넣어야 수정임 -->
+	                      	<input type="hidden" name="viewcount" value= "${boardDTO.viewcount}">                      	
+	                      	<input type="hidden" name="date" value= "${boardDTO.date}">                      	
+	                      	<input type="hidden" name="hitcount" value= "${boardDTO.hitcount }"> 
+	                      	<input type="hidden" name="ai_id" value= "${boardDTO.ai_id }"> 
                       	<!-- 수정폼 -->
                       	<div class="box-doby">
                       		<div class="form-group">
-                      		<label for="exampleInputEmail1">제목</label> <input type="text" name="title"
-                      		class="form-control" value="${boardDTO.title }">
+                      		<label for="exampleInputPassword1">제목</label>
+                      		<textarea class="form-control" name="title" rows="3">${boardDTO.title }</textarea>
                       		</div>
-                      	
+                      		
                       		<div class="form-group">
-                      		<label for="exampleInputPassword1">내용</label>
+                      		<label for="exampleInputPassword2">내용</label>
                       		<textarea class="form-control" name="content" rows="3">${boardDTO.content }</textarea>
                       		</div>
                       		
                       		<div class="form-group">
-                      		<label for="exampleInputEmail1">작정자</label> <input type="text" name="title"
+                      		<label for="exampleInputEmail1">작정자</label> <input type="text" name="user_ai_id"
                       		class="form-control" value="${boardDTO.user_ai_id }" readonly>
                       		</div>
                       	</div>
@@ -70,11 +77,11 @@ $(document).ready(function() {
                       	
                       	<!-- 버튼 -->
                       	<div class="box-footer">
-                      		<button type="submit" class="btn btn-primary">저장</button>
-                      		<button type="submit" class="btn btn-warning">취소</button>
+                      		<button type="submit" class="btn btn-primary">수정하기</button>
+                      		<button type="submit" class="btn btn-warning">취소하기</button>
                       	</div>
-                      	</form>
                       	<!-- /버튼 -->
+                      	</form>
                       </tr>                       
                     </tbody>
                   </table>

@@ -2,12 +2,48 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <head>
 <%@include file="include/head.jsp"%>
 </head>
 
 <body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var formObj = $("form[role='form']")
+		
+		console.log(formObj);
+		
+		$(".btn-warning").on("click", function(){
+			formObj.attr("action", "updatePage");
+			formObj.attr("method", "get");
+			formObj.submit();
+		});
+		
+		$(".btn-danger").on("click", function(){
+			formObj.attr("action", "deletePage");
+			formObj.submit();
+		});
+		
+		$(".btn-primary").on("click", function(){
+			self.location = "listPage";
+		});
+		
+		$(".deleteBtn").on("click", function(){
+			formObj.attr("action", "deletePage");
+			formObj.submit();
+		});
+		
+		$(".modifyBtn").on("click", function(){
+			formObj.attr("action", "updatePage");
+			formObj.attr("method", "get");
+			formObj.submit();
+		});
+		
+	});
+</script>
 
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
@@ -36,6 +72,10 @@
 								</div>
 								<hr>
 								<!-- 여기서 부터 작성 -->
+								<form role="form" method="post">
+									<input type='hidden' name='ai_id' value="${boardDTO.ai_id}">
+								</form>
+								
 								<div
 									class="d-sm-flex d-block align-items-center justify-content-between mb-9">
 									<span class="k2"> <strong>조회수</strong> | ${boardDTO.viewcount }
@@ -62,11 +102,18 @@
 
 
 
-								<button class="btn btn-outline-primary"
-									onclick="location.href='updatePage?ai_id=${boardDTO.ai_id}'">수정하기
+								<button type="submit" class="btn btn-outline-primary modifyBtn">
+									수정하기
+								</button>	
+								<button type="button" class="btn btn-outline-primary"
+									onclick="history.back()">뒤로가기
 								</button>
 								<button type="button" class="btn btn-outline-primary"
-									onclick="history.back()">뒤로가기</button>
+									onclick="location.href='listPage'">목록으로
+								</button>
+								<button type="submit" class="btn btn-outline-primary deleteBtn">삭제
+								</button>
+									
 								<!-- 	
 				<c:forEach var="article" items="${article }">
 					<thead>
@@ -99,26 +146,4 @@
 	<%@include file="include/js.jsp"%>
 </body>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		
-		var formobj = $("form[role='form']");
-		console.log(formObj);
-		$(".btn-warning").on("click," function(){
-			formObj.attr("action", "/board/update");
-			formObj.attr("method", "get");
-			formObj.submit();
-		});
-		
-		$(".btn-danger").on("click", function(){
-			formObj.attr("action", "/board/delete");
-			formObj.submit();
-		});
-		
-		$(".btn-primary").on("click", function(){
-			self.location = "/board/listAll";
-		});
-		
-	});
-</script>
 </html>

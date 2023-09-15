@@ -48,12 +48,13 @@ $(document).ready(function() {
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      	<form method="post">
+                      	<form role="form" method="post">
                       	<!-- 수정폼 -->
                       	<div class="box-doby">
+                      	
                       		<div class="form-group">
-                      		<label for="exampleInputEmail1">제목</label> <input type="text" name="title"
-                      		class="form-control" value="${boardDTO.title }">
+                      		<label for="exampleInputEmail1">제목</label> 
+                      		<input type="text" name="title" class="form-control" value="${boardDTO.title }">
                       		</div>
                       	
                       		<div class="form-group">
@@ -62,18 +63,24 @@ $(document).ready(function() {
                       		</div>
                       		
                       		<div class="form-group">
-                      		<label for="exampleInputEmail1">작정자</label> <input type="text" name="title"
+                      		<label for="exampleInputEmail1">작정자</label> <input type="text" name="user_ai_id"
                       		class="form-control" value="${boardDTO.user_ai_id }" readonly>
                       		</div>
+                      		
                       	</div>
                       	<!-- /수정폼 -->
+                      	<!-- 보내지 않은 남은 데이터도 전송 -->
+                      	<input type="hidden" name="ai_id" value= "${boardDTO.ai_id }">                      	
+                      	<input type="hidden" name="viewcount" value= "${boardDTO.viewcount}">                      	
+                      	<input type="hidden" name="date" value= "${boardDTO.date}">                      	
+                      	<input type="hidden" name="hitcount" value= "${boardDTO.hitcount }">                      	
+                      	</form>
                       	
                       	<!-- 버튼 -->
                       	<div class="box-footer">
-                      		<button type="submit" class="btn btn-primary">저장</button>
-                      		<button type="submit" class="btn btn-warning">취소</button>
+                      		<button type="submit" class="btn btn-primary">수정하기</button>
+                      		<button type="submit" class="btn btn-warning">취소하기</button>
                       	</div>
-                      	</form>
                       	<!-- /버튼 -->
                       </tr>                       
                     </tbody>

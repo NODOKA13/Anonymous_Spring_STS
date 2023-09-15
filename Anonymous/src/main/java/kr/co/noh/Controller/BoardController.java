@@ -128,7 +128,7 @@ public class BoardController {
 	
 	// R 페이징 게시글 상세 조회
 	@RequestMapping(value = "/detailPage", method = RequestMethod.GET)
-	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri ,Model model) throws Exception {
+	public void detailPage(@RequestParam("ai_id") int ai_id, @ModelAttribute("cri") Criteria cri ,Model model,RedirectAttributes rttr) throws Exception {
 		// 상세조회시 viewcount의 값에 +1 (조회수 증가)
 		BoardDTO dto = boardservice.BoardDetail(ai_id);
 		dto.setViewcount(dto.getViewcount() + 1);
@@ -136,6 +136,10 @@ public class BoardController {
 		
 		// 그냥 넣으면 boardDTO로 앞자리가 소문자로 넣어짐!!
 		model.addAttribute(boardservice.BoardDetail(ai_id));
+		
+		rttr.addAttribute("page", cri.getPage());
+		rttr.addAttribute("perPageNum", cri.getPerPageNum());
+		
 	}
 	
 	// D 페이징 게시글 삭제

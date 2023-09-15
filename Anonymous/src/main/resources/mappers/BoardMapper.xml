@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select * from board
 			where ai_id > 0
 			order by ai_id desc, date desc
-			limit #{page}, 10
+			limit #{page}, 6
 		]]>
 	</select>
 	

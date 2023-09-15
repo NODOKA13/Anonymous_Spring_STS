@@ -8,9 +8,7 @@
 </head>
 
 <body>
-	<link
-		href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-		rel="stylesheet">
+	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
 	<!-- 성공처리 알림 스크립트 -->
 	<script>
@@ -68,7 +66,7 @@
 									<div class="col-md-8 mb-3 mb-sm-0">
 									
 										<h3>
-											<a href="detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
+											<a href="${contextPath}/board/detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
 										</h3>
 										<h6>
 											작성자: 익명 / 작성일: ${boardDTO.date}
@@ -92,19 +90,19 @@
 										<ul class="pagination">
 										
 											<c:if test="${pageMaker.prev}">
-												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.startPage - 1)}">&laquo;</a></li>
+												<li class="page-item"><a class="page-link" href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">&laquo;</a></li>
 											</c:if>
 	
 											<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 											  <li class="page-item">
 											    <c:set var="activeClass" value="${pageMaker.cri.page == idx ? 'active' : ''}"/>
-											    <a class="page-link ${activeClass}" href="listPage${pageMaker.makeQuery(idx)}">${idx}</a>
+											    <a class="page-link ${activeClass}" href="list${pageMaker.makeSearch(idx)}">${idx}</a>
 											  </li>
 											</c:forEach>
 
 											
 											<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-												<li class="page-item"><a class="page-link" href="listPage${pageMaker.makeQuery(pageMaker.endPage +1)}">&raquo;</a></li>
+												<li class="page-item"><a class="page-link" href="list${pageMaker.makeSearch(pageMaker.endPage +1)}">&raquo;</a></li>
 											</c:if>
 											
 										</ul>
@@ -112,8 +110,48 @@
 								
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- /페이징 -->
+						
+						<!-- 검색기능 -->
+						<div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+							<div class="row align-items-center">
+								<div class="col-md-8 mb-3 mb-sm-0">
+								
+								<div class='box-body'>
+									<select name="searchType">
+										<option value="n"
+										<c:out value="${cri.searchType == null?'selected':''}"/>>
+										---</option>
+										<option value="t"
+										<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+										제목</option>
+										<option value="c"
+										<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
+										내용</option>
+										<option value="w"
+										<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+										글쓴이</option>
+										<option value="tc"
+										<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
+										제목 OR 내용</option>
+										<option value="cw"
+										<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
+										내용 OR 글쓴이</option>
+										<option value="tcw"
+										<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
+										제목 OR 내용 OR 글쓴이</option>
+									</select>
+								</div>
+								<input type="text" name='keyword' id="keywordinput"
+								value='${cri.keyword }'>
+								<button id='searchBtn' class="btn btn-outline-primary">Search</button>
+								<button id='newBtn' class="btn btn-outline-primary">New Board</button>
+								
+								</div>
+							</div>
+						</div>
+						<!-- /검색기능 -->
 						
 					</div>
 					<!-- /뭉탱이 -->

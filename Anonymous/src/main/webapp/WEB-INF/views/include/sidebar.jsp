@@ -31,7 +31,7 @@
 					class="ti ti-dots nav-small-cap-icon fs-4"></i> <span
 					class="hide-menu">Pages</span></li>
 				<li class="sidebar-item"><a class="sidebar-link"
-					href="${contextPath}/board/listPage" aria-expanded="false"> <span> <i
+					href="${contextPath}/sboard/list" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>
 					</span> <span class="hide-menu">Board</span></a>
 				<li class="sidebar-item"><a class="sidebar-link"

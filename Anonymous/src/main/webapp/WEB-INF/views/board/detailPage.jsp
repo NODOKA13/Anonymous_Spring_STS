@@ -109,7 +109,7 @@
 									onclick="history.back()">뒤로가기
 								</button>
 								<button type="button" class="btn btn-outline-primary"
-									onclick="location.href='listPage'">목록으로
+									onclick="location.href='${contextPath}/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}'">목록으로
 								</button>
 								<button type="submit" class="btn btn-outline-primary deleteBtn">삭제
 								</button>

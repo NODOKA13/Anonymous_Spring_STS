@@ -139,13 +139,11 @@ public class BoardController {
 		
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
-		
 	}
 	
 	// D 페이징 게시글 삭제
 	@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
 	public String deletePage(@RequestParam("ai_id") int ai_id, Criteria cri, RedirectAttributes rttr) throws Exception {
-		System.out.println("딜리트페이지");
 		boardservice.BoardDelete(ai_id);
 		
 		rttr.addAttribute("page", cri.getPage());

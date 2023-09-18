@@ -39,6 +39,8 @@
 								<!-- 여기서 부터 작성 -->
 								<form role="form" method="post">
 									<input type='hidden' name='ai_id' value="${boardDTO.ai_id}">
+									<input type='hidden' name='page' value="${cri.page}">
+									<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 								</form>
 								
 								<div
@@ -76,7 +78,7 @@
 								<button type="button" class="btn btn-outline-primary"
 									onclick="location.href='${contextPath}/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}'">목록으로
 								</button>
-								<button type="submit" class="btn btn-outline-primary deleteBtn">삭제
+								<button type="submit" class="btn btn-outline-primary deleteBtn">삭제하기
 								</button>
 									
 								<!-- 	

@@ -16,6 +16,7 @@ $(document).ready(function() {
 	console.log(formObj);
 	
 	$(".btn-warning").on("click", function() {
+		formObj.submit();
 		self.location = "listPage?page=${cri.page}&perPageNum=${cri.perPageNum}";
 	});
 	
@@ -48,7 +49,8 @@ $(document).ready(function() {
                   <table class="table text-nowrap mb-0 align-middle" style="user-select: auto;">
                     <tbody style="user-select: auto;">
                       <tr style="user-select: auto;">
-                      	<form role="form" action="updatePage" method="post">
+                      
+                      	<form role="form" method="post">
                       		<input type="hidden" name="page" value = "${cri.page }">
                       		<input type="hidden" name="perPageNum" value= "${cri.perPageNum }">
                       		<!-- post하지 않는 데이터도 넣어야 수정임 -->
@@ -56,6 +58,9 @@ $(document).ready(function() {
 	                      	<input type="hidden" name="date" value= "${boardDTO.date}">                      	
 	                      	<input type="hidden" name="hitcount" value= "${boardDTO.hitcount }"> 
 	                      	<input type="hidden" name="ai_id" value= "${boardDTO.ai_id }"> 
+	                      	<input type="hidden" name="page" value= "${cri.page }"> 
+	                      	<input type="hidden" name="perPageNum" value= "${cri.perPageNum }"> 
+	                      	
                       	<!-- 수정폼 -->
                       	<div class="box-doby">
                       		<div class="form-group">

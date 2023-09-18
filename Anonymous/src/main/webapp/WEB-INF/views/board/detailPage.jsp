@@ -9,41 +9,6 @@
 </head>
 
 <body>
-<script type="text/javascript">
-	$(document).ready(function(){
-		
-		var formObj = $("form[role='form']")
-		
-		console.log(formObj);
-		
-		$(".btn-warning").on("click", function(){
-			formObj.attr("action", "updatePage");
-			formObj.attr("method", "get");
-			formObj.submit();
-		});
-		
-		$(".btn-danger").on("click", function(){
-			formObj.attr("action", "deletePage");
-			formObj.submit();
-		});
-		
-		$(".btn-primary").on("click", function(){
-			self.location = "listPage";
-		});
-		
-		$(".deleteBtn").on("click", function(){
-			formObj.attr("action", "deletePage");
-			formObj.submit();
-		});
-		
-		$(".modifyBtn").on("click", function(){
-			formObj.attr("action", "updatePage");
-			formObj.attr("method", "get");
-			formObj.submit();
-		});
-		
-	});
-</script>
 
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
@@ -143,7 +108,45 @@
 			</div>
 		</div>
 	</div>
+	
 	<%@include file="../include/js.jsp"%>
+	
 </body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var formObj = $("form[role='form']")
+		
+		console.log(formObj);
+		
+		$(".btn-warning").on("click", function(){
+			formObj.attr("action", "updatePage");
+			formObj.attr("method", "get");
+			formObj.submit();
+		});
+		
+		$(".btn-danger").on("click", function(){
+			formObj.attr("action", "deletePage");
+			formObj.submit();
+		});
+		
+		$(".btn-primary").on("click", function(){
+			self.location = "listPage";
+		});
+		
+		$(".deleteBtn").on("click", function(){
+			formObj.attr("action", "deletePage");
+			formObj.submit();
+		});
+		
+		$(".modifyBtn").on("click", function(){
+			formObj.attr("action", "updatePage");
+			formObj.attr("method", "get");
+			formObj.submit();
+		});
+		
+	});
+</script>
 
 </html>

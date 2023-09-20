@@ -57,7 +57,47 @@
 								</div>
 							</div>
 						</div>
-
+						
+						<!-- 검색기능 -->
+						<div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
+							<div class="row align-items-center">
+								<div class="col-md-8 mb-3 mb-sm-0">
+								
+								<div class='box-body'>
+									<select name="searchType">
+										<option value="n"
+										<c:out value="${cri.searchType == null?'selected':''}"/>>
+										---</option>
+										<option value="t"
+										<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+										제목</option>
+										<option value="c"
+										<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
+										내용</option>
+										<option value="w"
+										<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+										글쓴이</option>
+										<option value="tc"
+										<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
+										제목 OR 내용</option>
+										<option value="cw"
+										<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
+										내용 OR 글쓴이</option>
+										<option value="tcw"
+										<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
+										제목 OR 내용 OR 글쓴이</option>
+									</select>
+								</div>
+								<input type="text" name='keyword' id="keywordinput"
+								value='${cri.keyword }'>
+								<button id='searchBtn' class="btn btn-outline-primary">Search</button>
+								<button id='newBtn' class="btn btn-outline-primary">New Board</button>
+								
+								</div>
+							</div>
+						</div>
+						<!-- /검색기능 -->
+						
 						<!-- 뭉탱이-게시글 -->
 						<c:forEach items="${list}" var="boardDTO">
 
@@ -113,45 +153,7 @@
 						</div>
 						<!-- /페이징 -->
 						
-						<!-- 검색기능 -->
-						<div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0">
-							<div class="row align-items-center">
-								<div class="col-md-8 mb-3 mb-sm-0">
-								
-								<div class='box-body'>
-									<select name="searchType">
-										<option value="n"
-										<c:out value="${cri.searchType == null?'selected':''}"/>>
-										---</option>
-										<option value="t"
-										<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-										제목</option>
-										<option value="c"
-										<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-										내용</option>
-										<option value="w"
-										<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-										글쓴이</option>
-										<option value="tc"
-										<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-										제목 OR 내용</option>
-										<option value="cw"
-										<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-										내용 OR 글쓴이</option>
-										<option value="tcw"
-										<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-										제목 OR 내용 OR 글쓴이</option>
-									</select>
-								</div>
-								<input type="text" name='keyword' id="keywordinput"
-								value='${cri.keyword }'>
-								<button id='searchBtn' class="btn btn-outline-primary">Search</button>
-								<button id='newBtn' class="btn btn-outline-primary">New Board</button>
-								
-								</div>
-							</div>
-						</div>
-						<!-- /검색기능 -->
+					
 						
 					</div>
 					<!-- /뭉탱이 -->

@@ -25,7 +25,7 @@
 				<li class="sidebar-item"><a class="sidebar-link"
 					href="${contextPath }/" aria-expanded="false"> <span> <i
 							class="ti ti-layout-dashboard"></i>
-					</span> <span class="hide-menu">Home</span>
+					</span> <span class="hide-menu">Home 홈</span>
 				</a></li>
 				<li class="nav-small-cap"><i
 					class="ti ti-dots nav-small-cap-icon fs-4"></i> <span
@@ -33,7 +33,7 @@
 				<li class="sidebar-item"><a class="sidebar-link"
 					href="${contextPath}/sboard/list" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>
-					</span> <span class="hide-menu">Board</span></a>
+					</span> <span class="hide-menu">Board 보드</span></a>
 				<li class="sidebar-item"><a class="sidebar-link"
 					href="${contextPath}/board/write" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>

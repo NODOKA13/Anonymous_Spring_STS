@@ -33,9 +33,9 @@
                       
                       <!-- 링크 -->
                       
-                      	<a href="board/listPage">board/listPage</a><br>
-                      	<a href="board/write">board/write</a><br>
-                      	<a href="sboard/list">sboard/list</a>
+                      	<a href="board/listPage">board/listPage 리스트페이지</a><br>
+                      	<a href="board/write">board/write 글쓰기</a><br>
+                      	<a href="sboard/list">sboard/list s보드</a>
                       </tr>       
                       <!-- /링크 -->
                                       

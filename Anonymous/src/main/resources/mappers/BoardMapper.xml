@@ -59,4 +59,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			]]>
 	</select>
 	
+	<!-- 검색기능 -->
+	<select id="listSearch" resultType="kr.co.noh.DTO.BoardDTO">
+	<![CDATA[
+		select *
+		from board
+		where ai_id > 0
+		order by ai_id desc
+		limit #{pageStart}, #{perPageNum}
+	]]>
+	</select>
+	
+	<!-- 검색기능 -->
+	<select id="listSearchCount" resultType="int">
+		<![CDATA[
+			select count(ai_id)
+			from board
+			where ai_id > 0
+		]]>
+	</select>
 </mapper>

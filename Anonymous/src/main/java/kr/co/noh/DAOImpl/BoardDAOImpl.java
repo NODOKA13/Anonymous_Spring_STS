@@ -11,6 +11,7 @@ import com.mysql.cj.Session;
 import kr.co.noh.DAO.BoardDAO;
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
+import kr.co.noh.DTO.SearchCriteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -80,6 +81,18 @@ public class BoardDAOImpl implements BoardDAO {
 	public int countPaging(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlsession.selectOne(namespace + ".countPaging", cri);
+	}
+
+	@Override
+	public List<BoardDTO> listSearch(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectList(namespace+".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne(namespace+".listSearchCount",cri);
 	}
 
 }

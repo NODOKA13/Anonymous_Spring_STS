@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
+import kr.co.noh.DTO.SearchCriteria;
 
 public interface BoardDAO {
 	//글쓰기 C
@@ -29,4 +30,10 @@ public interface BoardDAO {
 	
 	//페이징
 	public int countPaging(Criteria cri) throws Exception;
+	
+	//게시판 검색기능
+	public List<BoardDTO> listSearch(SearchCriteria cri) throws Exception;
+	
+	//게시판 검색기능
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 }

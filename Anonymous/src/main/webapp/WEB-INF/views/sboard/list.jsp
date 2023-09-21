@@ -2,23 +2,14 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <head>
 <%@include file="../include/head.jsp"%>
 </head>
 
 <body>
-	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
-	<!-- 성공처리 알림 스크립트 -->
-	<script>
-		var result = '${msg}';
-
-		if (result == 'success') {
-			alert("처리가 완료되었습니다.");
-		}
-	</script>
-	<!-- /성공처리 알림 스크립트 -->
 
 	<!--  Body Wrapper -->
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical"
@@ -63,8 +54,8 @@
 							<div class="row align-items-center">
 								<div class="col-md-8 mb-3 mb-sm-0">
 								
-								<div class='box-body'>
-									<select name="searchType">
+								<div class="box-body">
+									<select data-toggle="select">
 										<option value="n"
 										<c:out value="${cri.searchType == null?'selected':''}"/>>
 										---</option>
@@ -88,10 +79,10 @@
 										제목 OR 내용 OR 글쓴이</option>
 									</select>
 								</div>
-								<input type="text" name='keyword' id="keywordinput"
+								<input type="text" name='keyword' id="keywordInput"
 								value='${cri.keyword }'>
-								<button id='searchBtn' class="btn btn-outline-primary">Search</button>
-								<button id='newBtn' class="btn btn-outline-primary">New Board</button>
+								<button class="btn btn-outline-primary" id='searchBtn'>Search</button>
+								<button class="btn btn-outline-primary" id='newBtn'>New Board</button>
 								
 								</div>
 							</div>
@@ -106,7 +97,7 @@
 									<div class="col-md-8 mb-3 mb-sm-0">
 									
 										<h3>
-											<a href="${contextPath}/board/detailPage${pageMaker.makeQuery(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
+											<a href="${contextPath}/board/detailPage${pageMaker.makeSearch(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
 										</h3>
 										<h6>
 											작성자: 익명 / 작성일: ${boardDTO.date}
@@ -163,6 +154,35 @@
 		</div>
 	</div>
 	<%@include file="../include/js.jsp"%>
+	<script>
+	<!-- 성공처리 알림 스크립트 -->
+		var result = '${msg}';
+
+		if (result == 'success') {
+			alert("처리가 완료되었습니다.");
+		}
+	<!-- /성공처리 알림 스크립트 -->
+	
+	<!-- 검색버튼 처리 스크립트 -->	
+		$(document).ready(
+			function() {
+				
+				$('#searchBtn').on(
+					"click",
+					function(event) {
+						self.location = "list"
+						+ '${pageMaker.makeQuery(1)}'
+						+ "&searchType="
+						+ $("select option:selected").val()
+						+ "&keyword=" + encodeURIComponent($('#keywordInput').val());
+					});
+				
+				$('#newBtn').on("click", function(evt) {
+					self.location = "${contextPath}/board/write";
+				});
+			});
+	</script>
+	<!-- /검색버튼 처리 스크립트 -->	
 </body>
 
 </html>

@@ -69,8 +69,8 @@ public class PageMaker {
 			return "";
 		}
 		try {
-			return URLEncoder.encode(keyword,"UTF-8");
-		}catch (UnsupportedEncodingException e){
+			return URLEncoder.encode(keyword, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
 			return "";
 		}
 	}

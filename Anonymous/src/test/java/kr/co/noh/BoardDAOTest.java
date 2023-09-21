@@ -16,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import kr.co.noh.DAO.BoardDAO;
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
+import kr.co.noh.DTO.SearchCriteria;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml" })
@@ -67,5 +68,24 @@ public class BoardDAOTest {
 		
 		logger.info("/board/detail?ai_id=12&perPageNum=20");
 		logger.info(uriComponents.toString());
+	}
+	
+	@Test
+	public void testDynamic1() throws Exception{
+		SearchCriteria cri = new SearchCriteria();
+		cri.setPage(1);
+		cri.setKeyword("±Û");
+		cri.setSearchType("t");
+		
+		logger.info("===================================");
+		
+		List<BoardDTO> list = boardDAO.listSearch(cri);
+		
+		for(BoardDTO dto : list) {
+			logger.info(dto.getAi_id()+":"+dto.getTitle());
+		}
+		logger.info("===================================");
+		
+		logger.info("COUNT: " + boardDAO.listSearchCount(cri));
 	}
 }

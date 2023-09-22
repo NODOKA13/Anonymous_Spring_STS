@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
+import kr.co.noh.DTO.SearchCriteria;
 
 public interface BoardService {
 	//±€æ≤±‚ C
@@ -22,8 +23,8 @@ public interface BoardService {
 	public void BoardDelete(int ai_id) throws Exception;
 	
 	//∆‰¿Ã¬°
-	public List<BoardDTO> listCriteria(Criteria cri) throws Exception;
+	public List<BoardDTO> listSearchCriteria(SearchCriteria cri) throws Exception;
 	
 	//∆‰¿Ã¬°
-	public int listCountCriteria(Criteria cri) throws Exception;
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 }

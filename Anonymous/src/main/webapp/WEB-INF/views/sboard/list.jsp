@@ -40,10 +40,6 @@
 									<select
 										class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50"
 										data-toggle="select" tabindex="-98">
-										<option>Categories</option>
-										<option>Learn</option>
-										<option>Share</option>
-										<option>Build</option>
 									</select>
 								</div>
 							</div>
@@ -55,7 +51,8 @@
 								<div class="col-md-8 mb-3 mb-sm-0">
 								
 								<div class="box-body">
-									<select data-toggle="select">
+									<!-- <select data-toggle="select"> -->
+									<select name="searchType">
 										<option value="n"
 										<c:out value="${cri.searchType == null?'selected':''}"/>>
 										---</option>
@@ -81,8 +78,8 @@
 								</div>
 								<input type="text" name='keyword' id="keywordInput"
 								value='${cri.keyword }'>
-								<button class="btn btn-outline-primary" id='searchBtn'>Search</button>
-								<button class="btn btn-outline-primary" id='newBtn'>New Board</button>
+								<button class="btn btn-outline-primary" id='searchBtn'>검색</button>
+								<button class="btn btn-outline-primary" id='newBtn'>글쓰기</button>
 								
 								</div>
 							</div>
@@ -97,7 +94,7 @@
 									<div class="col-md-8 mb-3 mb-sm-0">
 									
 										<h3>
-											<a href="${contextPath}/board/detailPage${pageMaker.makeSearch(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
+											<a href="${contextPath}/sboard/detailPage${pageMaker.makeSearch(pageMaker.cri.page)}&ai_id=${boardDTO.ai_id }" class="text-primary">${boardDTO.title }</a>
 										</h3>
 										<h6>
 											작성자: 익명 / 작성일: ${boardDTO.date}

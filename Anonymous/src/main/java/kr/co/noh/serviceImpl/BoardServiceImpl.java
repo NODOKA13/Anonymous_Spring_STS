@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import kr.co.noh.DAO.BoardDAO;
 import kr.co.noh.DTO.BoardDTO;
 import kr.co.noh.DTO.Criteria;
+import kr.co.noh.DTO.SearchCriteria;
 import kr.co.noh.service.BoardService;
 
 @Service
@@ -51,19 +52,20 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		boarddao.BoardDelete(ai_id);
 	}
-	
-	//∆‰¿Ã¬°
-	@Override
-	public List<BoardDTO> listCriteria(Criteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return boarddao.listCriteria(cri);
-	}
 
 	//∆‰¿Ã¬°
 	@Override
-	public int listCountCriteria(Criteria cri) throws Exception {
+	public List<BoardDTO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		// TODO Auto-generated method stub
-		return boarddao.countPaging(cri);
+		return boarddao.listSearch(cri);
 	}
+	
+	//∆‰¿Ã¬°
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return boarddao.listSearchCount(cri);
+	}
+	
 	
 }

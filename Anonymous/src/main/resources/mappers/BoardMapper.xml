@@ -59,12 +59,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			]]>
 	</select>
 	
+	<!-- 검색기능 재사용을 위해 sql로 조각냄 -->
+	<sql id="search">
+	<if test="searchType != null">
+		<if test="searchType == 't'.toString()">
+			and title like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and content like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and user_ai_id like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and(title like CONCAT('%', #{keyword}, '%') OR content like CONCAT('%', #{keyword}, '%'))
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and(content like CONCAT('%', #{keyword}, '%') OR user_ai_id like CONCAT('%', #{keyword}, '%'))
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and(title like CONCAT('%', #{keyword}, '%') OR content like CONCAT('%', #{keyword}, '%') OR user_ai_id like CONCAT('%', #{keyword}, '%'))
+		</if>
+	</if>
+	</sql>
+	
 	<!-- 검색기능 -->
 	<select id="listSearch" resultType="kr.co.noh.DTO.BoardDTO">
 	<![CDATA[
 		select *
 		from board
 		where ai_id > 0
+	]]>
+	
+	<include refid="search"></include>
+	
+	<![CDATA[
 		order by ai_id desc
 		limit #{pageStart}, #{perPageNum}
 	]]>
@@ -77,5 +106,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			from board
 			where ai_id > 0
 		]]>
+		<include refid="search"></include>
 	</select>
 </mapper>

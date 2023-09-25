@@ -25,6 +25,25 @@ public class SearchBoardController {
 		@Inject
 		private BoardService boardservice;
 		
+		//C 게시글 쓰기 GET
+		@RequestMapping(value = "/write", method = RequestMethod.GET)
+		public void writeGET() throws Exception{
+			logger.info("write get...............");
+		}
+		
+		//C 게시글 쓰기 POST
+		@RequestMapping(value = "/write", method = RequestMethod.POST)
+		public String writePOST(BoardDTO dto, RedirectAttributes rttr) throws Exception{
+			logger.info("write post...............");
+			logger.info(dto.toString());
+			
+			boardservice.BoardWrite(dto);
+			
+			rttr.addFlashAttribute("msg", "success");
+			
+			return "redirect:/sboard/list";
+		}
+		
 		//R 게시글 전체보기
 		@RequestMapping(value = "/list", method = RequestMethod.GET)
 		public void listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{

@@ -175,7 +175,7 @@
 					});
 				
 				$('#newBtn').on("click", function(evt) {
-					self.location = "${contextPath}/board/write";
+					self.location = "${contextPath}/sboard/write";
 				});
 			});
 	</script>

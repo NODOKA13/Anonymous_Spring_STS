@@ -42,7 +42,7 @@
 									<input type='hidden' name='page' value="${cri.page}">
 									<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 									<input type='hidden' name='searchType' value="${cri.searchType}">
-									<input type='hidden' name='ketword' value="${cri.keyword}">
+									<input type='hidden' name='keyword' value="${cri.keyword}">
 								</form>
 								
 								<div
@@ -78,7 +78,7 @@
 									onclick="history.back()">뒤로가기
 								</button>
 								<button type="button" class="btn btn-outline-primary"
-									onclick="location.href='${contextPath}/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}'">목록으로
+									onclick="location.href='list?page=${cri.page}&perPageNum=${cri.perPageNum}&searchType=${cri.searchType}&keyword=${cri.keyword}'">목록으로
 								</button>
 								<button type="submit" class="btn btn-outline-primary deleteBtn">삭제하기
 								</button>

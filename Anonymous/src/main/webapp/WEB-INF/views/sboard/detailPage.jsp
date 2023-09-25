@@ -125,27 +125,27 @@
 		console.log(formObj);
 		
 		$(".btn-warning").on("click", function(){
-			formObj.attr("action", "/sboard/updatePage");
+			formObj.attr("action", "updatePage");
 			formObj.attr("method", "get");
 			formObj.submit();
 		});
 		
 		$(".btn-danger").on("click", function(){
-			formObj.attr("action", "/sboard/deletePage");
+			formObj.attr("action", "deletePage");
 			formObj.submit();
 		});
 		
 		$(".btn-primary").on("click", function(){
-			self.location = "/sboard/list";
+			self.location = "list";
 		});
 		
 		$(".deleteBtn").on("click", function(){
-			formObj.attr("action", "/sboard/deletePage");
+			formObj.attr("action", "deletePage");
 			formObj.submit();
 		});
 		
 		$(".modifyBtn").on("click", function(){
-			formObj.attr("action", "/sboard/updatePage");
+			formObj.attr("action", "updatePage");
 			formObj.attr("method", "get");
 			formObj.submit();
 		});

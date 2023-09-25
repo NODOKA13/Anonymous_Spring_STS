@@ -48,7 +48,7 @@ public class SearchBoardController {
 		}
 		
 		//D 게시글 삭제
-		@RequestMapping(value = "/delete", method = RequestMethod.POST)
+		@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
 		public String remove(@RequestParam("ai_id") int ai_id, SearchCriteria cri, RedirectAttributes rttr) throws Exception {
 			
 			boardservice.BoardDelete(ai_id);
@@ -58,7 +58,7 @@ public class SearchBoardController {
 			rttr.addAttribute("searchType", cri.getSearchType());
 			rttr.addAttribute("keyword", cri.getKeyword());
 			
-			rttr.addFlashAttribute("msg", "SUCCESS");
+			rttr.addFlashAttribute("msg", "success");
 			
 			return "redirect:/sboard/list";
 		}

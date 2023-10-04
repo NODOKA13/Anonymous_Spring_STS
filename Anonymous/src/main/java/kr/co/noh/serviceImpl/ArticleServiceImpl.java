@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.noh.DAO.ArticleDAO;
 import kr.co.noh.DTO.ArticleDTO;
+import kr.co.noh.DTO.Criteria;
 import kr.co.noh.service.ArticleService;
 
 @Service //p187 서비스 등록을 까먹지 않기
@@ -25,9 +26,9 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	//댓글 전제조회 R
 	@Override
-	public List<ArticleDTO> ArticleListAll(int ai_id) throws Exception{
+	public List<ArticleDTO> ArticleListAll(int board_ai_id) throws Exception{
 		// TODO Auto-generated method stub
-		return articledao.ArticleListAll(ai_id);
+		return articledao.ArticleListAll(board_ai_id);
 	}
 
 	//댓글 상제조회 R
@@ -39,9 +40,9 @@ public class ArticleServiceImpl implements ArticleService{
 
 	//댓글 수정 U
 	@Override
-	public void ArticleUpdate(int ai_id) throws Exception{
+	public void ArticleUpdate(ArticleDTO articleDTO) throws Exception{
 		// TODO Auto-generated method stub
-		articledao.ArticleUpdate(ai_id);
+		articledao.ArticleUpdate(articleDTO);
 	}
 
 	//댓글 삭제 D
@@ -49,6 +50,18 @@ public class ArticleServiceImpl implements ArticleService{
 	public void ArticleDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		articledao.ArticleDelete(ai_id);
+	}
+
+	@Override
+	public List<ArticleDTO> listartilePage(int ai_id, Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return articledao.listPage(ai_id, cri);
+	}
+
+	@Override
+	public int count(int ai_id) throws Exception {
+		// TODO Auto-generated method stub
+		return articledao.count(ai_id);
 	}
 
 }

@@ -35,13 +35,17 @@
 							class="ti ti-article"></i>
 					</span> <span class="hide-menu">Board 보드</span></a>
 				<li class="sidebar-item"><a class="sidebar-link"
-					href="${contextPath}/board/write" aria-expanded="false"> <span> <i
+					href="${contextPath}/sboard/write" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>
 					</span> <span class="hide-menu">Write</span></a>
 				<li class="sidebar-item"><a class="sidebar-link"
 					href="${contextPath}/dummy" aria-expanded="false"> <span> <i
 							class="ti ti-article"></i>
 					</span> <span class="hide-menu">Dummy</span></a>
+				<li class="sidebar-item"><a class="sidebar-link"
+					href="${contextPath}/test" aria-expanded="false"> <span> <i
+							class="ti ti-article"></i>
+					</span> <span class="hide-menu">test</span></a>
 				<!-- 안쓰는 버튼 숨기기
 				</a></li>
 				<li class="sidebar-item"><a class="sidebar-link"

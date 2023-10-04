@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `anonymous`.`user` (
   `AI_ID` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`AI_ID`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -35,8 +36,8 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `anonymous`.`board` (
   `AI_ID` INT NOT NULL AUTO_INCREMENT,
-  `Title` VARCHAR(255) NULL DEFAULT NULL,
-  `Content` VARCHAR(255) NULL DEFAULT NULL,
+  `Title` VARCHAR(255) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci' NULL DEFAULT NULL,
+  `Content` VARCHAR(255) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci' NULL DEFAULT NULL,
   `ViewCount` INT NULL DEFAULT NULL,
   `User_AI_ID` INT NULL DEFAULT NULL,
   `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -47,25 +48,25 @@ CREATE TABLE IF NOT EXISTS `anonymous`.`board` (
     FOREIGN KEY (`User_AI_ID`)
     REFERENCES `anonymous`.`user` (`AI_ID`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+AUTO_INCREMENT = 722952
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
 -- Table `anonymous`.`article`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `anonymous`.`article` (
+  `board_AI_ID` INT NOT NULL,
   `AI_Id` INT NOT NULL AUTO_INCREMENT,
   `Content` VARCHAR(255) NULL DEFAULT NULL,
-  `Board_AI_ID` INT NULL DEFAULT NULL,
   `User_AI_ID` INT NULL DEFAULT NULL,
   `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `HitCount` INT NULL DEFAULT NULL,
   PRIMARY KEY (`AI_Id`),
-  INDEX `fk_Article_Board1_idx` (`Board_AI_ID` ASC) VISIBLE,
   INDEX `fk_Article_User1_idx` (`User_AI_ID` ASC) VISIBLE,
-  CONSTRAINT `fk_Article_Board1`
-    FOREIGN KEY (`Board_AI_ID`)
+  INDEX `fk_article_board1_idx` (`board_AI_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_article_board1`
+    FOREIGN KEY (`board_AI_ID`)
     REFERENCES `anonymous`.`board` (`AI_ID`),
   CONSTRAINT `fk_Article_User1`
     FOREIGN KEY (`User_AI_ID`)

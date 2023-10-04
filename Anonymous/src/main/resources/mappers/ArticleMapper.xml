@@ -6,12 +6,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.co.noh.Article.ArticleMapper">
 	<!-- 댓글 쓰기 C -->
 	<insert id="ArticleWrite">
-		insert into Article (content, boad_ai_id, user_ai_id, hitcount)
-		values (#{content},#{boad_ai_id},#{user_ai_id},#{hitcount})		
+		insert into Article (content, board_ai_id, user_ai_id, hitcount)
+		values (#{content},#{board_ai_id},#{user_ai_id},#{hitcount})		
 	</insert>
 	<!-- 댓글 전체조회 R -->
 	<select id="ArticleListAll" resultType="kr.co.noh.DTO.ArticleDTO"> 
 		select * from article
+		where board_ai_id=#{board_ai_id}
+		order by ai_id desc
 	</select>
 	<!-- 댓글 상제조회 R -->
 	<select id="ArticleDetail" resultType="kr.co.noh.DTO.ArticleDTO">
@@ -26,5 +28,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="ArticleDelete">
 		delete from article where ai_id=#{ai_id}
 	</delete>
+	
+	<!-- 댓글 페이징 -->
+	<select id="listPage" resultType="kr.co.noh.DTO.ArticleDTO">
+	select * from article
+	where ai_id = #{ai_id}
+	order by ai_id desc
+	limit #{cri.pageStart}, #{cri.getPageNum}
+	</select>
+	
+	<!-- 댓글 페이징 -->
+	<select id="count" resultType="int">
+		select count(ai_id) from article where ai_id = #{ai_id}
+	</select>
 	
 </mapper>

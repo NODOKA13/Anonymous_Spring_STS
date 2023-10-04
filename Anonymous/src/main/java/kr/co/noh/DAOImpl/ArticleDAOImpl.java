@@ -1,6 +1,8 @@
 package kr.co.noh.DAOImpl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.noh.DAO.ArticleDAO;
 import kr.co.noh.DTO.ArticleDTO;
+import kr.co.noh.DTO.Criteria;
 
 @Repository
 public class ArticleDAOImpl implements ArticleDAO{
@@ -24,10 +27,10 @@ public class ArticleDAOImpl implements ArticleDAO{
 
 	//¥Ò±€ ¿¸¡¶¡∂»∏ R
 	@Override
-	public List<ArticleDTO> ArticleListAll(int ai_id) throws Exception{
+	public List<ArticleDTO> ArticleListAll(int board_ai_id) throws Exception{
 		// TODO Auto-generated method stub
-		List<ArticleDTO> articleListAll = sqlsession.selectList(namespace+".ArticleListAll",ai_id);
-		return null;
+		List<ArticleDTO> articleListAll = sqlsession.selectList(namespace+".ArticleListAll",board_ai_id);
+		return articleListAll;
 	}
 
 	//¥Ò±€ ªÛ¡¶¡∂»∏ R
@@ -40,9 +43,9 @@ public class ArticleDAOImpl implements ArticleDAO{
 	
 	//¥Ò±€ ºˆ¡§ U
 	@Override
-	public void ArticleUpdate(int ai_id) throws Exception{
+	public void ArticleUpdate(ArticleDTO articleDTO) throws Exception{
 		// TODO Auto-generated method stub
-		sqlsession.update(namespace+".ArticleUpdate",ai_id);
+		sqlsession.update(namespace+".ArticleUpdate", articleDTO);
 	}
 
 	//¥Ò±€ ªË¡¶ D
@@ -50,6 +53,23 @@ public class ArticleDAOImpl implements ArticleDAO{
 	public void ArticleDelete(int ai_id) throws Exception{
 		// TODO Auto-generated method stub
 		sqlsession.delete(namespace+".ArticleDelete",ai_id);
+	}
+
+	@Override
+	public List<ArticleDTO> listPage(int ai_id, Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String, Object> paramMap = new HashMap<>();
+		
+		paramMap.put("ai_id", ai_id);
+		paramMap.put("cri", cri);
+		
+		return sqlsession.selectList(namespace+".listPage",paramMap);
+	}
+
+	@Override
+	public int count(int ai_id) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne(namespace+".count",ai_id);
 	}
 
 }

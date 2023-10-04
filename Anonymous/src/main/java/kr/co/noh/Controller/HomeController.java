@@ -28,12 +28,12 @@ public class HomeController {
 		return "home";
 	}
 	
-	//테스트페이지
-	@RequestMapping(value = "test", method = RequestMethod.GET)
-	public String test() {
-		
-		return "test";
-	}
+//	//테스트페이지
+//	@RequestMapping(value = "test", method = RequestMethod.GET)
+//	public String test() {
+//		
+//		return "test";
+//	}
 	
 	//더미페이지
 	@RequestMapping(value = "dummy", method = RequestMethod.GET)
@@ -42,4 +42,9 @@ public class HomeController {
 		return "dummy";
 	}
 	
+	//아작스테스트페이지
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public void ajaxTest() {
+		
+	}
 }
